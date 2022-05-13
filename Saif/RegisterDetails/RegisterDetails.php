@@ -28,7 +28,7 @@ class RegisterDetails extends InID implements File
     function __construct()
     {
         $this->FileObj = new filemanager();
-        $this->FileObj->setFilenames("RegisterDetails.txt");
+        $this->FileObj->setFilenames("RegisterDetails");
         //$this->Crs = new Course();
         //$this->Reg = new Register();
     }
