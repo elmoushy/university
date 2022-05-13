@@ -66,7 +66,7 @@ class filemanager
         echo $OLine;
         //exit;
         $contents = file_get_contents($this->Filenames);
-        $contents = str_replace($OLine, $NLine."\r\n", $contents);
+        $contents = str_replace($OLine, $NLine, $contents);
         file_put_contents($this->Filenames, $contents);
     }
     function tableData()
@@ -148,7 +148,18 @@ class filemanager
     {
         if($Filenames!="")
         {
-            $this->Filenames = $Filenames;
+            if(file_exists($Filenames."txt"))
+            {
+                $this->Filenames = $Filenames."txt";
+            }else if(file_exists("../".$Filenames."/".$Filenames.".txt"))
+            {
+                $this->Filenames = "../".$Filenames."/".$Filenames.".txt";
+            }else if(file_exists($Filenames."/".$Filenames.".txt"))
+            {
+                $this->Filenames = $Filenames."/".$Filenames.".txt";
+            } 
+            
+            echo("/".$this->Filenames."/");
         }
         
         return $this;
