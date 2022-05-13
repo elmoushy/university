@@ -157,9 +157,7 @@ class filemanager
             }else if(file_exists($Filenames."/".$Filenames.".txt"))
             {
                 $this->Filenames = $Filenames."/".$Filenames.".txt";
-            } 
-            
-            echo("/".$this->Filenames."/");
+            }             
         }
         
         return $this;
