@@ -75,7 +75,7 @@ class Register extends InID implements File
         }
     }
 
-    function updateTotalOfRegister($ID, $pos, $value)
+    function updateTotalOfRegister($ID, $pos, $value, $t)
     {
         $Rec = $this->FileObj->AllContents();
         for($i=0; $i< count($Rec) - 1;$i++)
@@ -95,7 +95,11 @@ class Register extends InID implements File
                         $nL.=$this->FileObj->getSeparator();
                     }
                 }
-                $nL.="\r\n";
+                if($t == 1)
+                {
+                    $nL.="\r\n";
+                }
+                
 
                 $this->FileObj->update_dataFile($Rec[$i],$nL);
                 break;

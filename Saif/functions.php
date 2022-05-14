@@ -61,10 +61,6 @@ class filemanager
     }
     function update_dataFile($OLine,$NLine)
     {
-        echo $NLine;
-        echo"<br>";
-        echo $OLine;
-        //exit;
         $contents = file_get_contents($this->Filenames);
         $contents = str_replace($OLine, $NLine, $contents);
         file_put_contents($this->Filenames, $contents);

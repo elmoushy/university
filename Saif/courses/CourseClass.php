@@ -17,7 +17,7 @@ class Course extends InID implements File
     public function __construct()
     {
         $this->FileObj = new filemanager();
-        $this->FileObj->setFilenames("courses.txt");
+        $this->FileObj->setFilenames("courses");
     }
     public function Store()
     {
@@ -53,6 +53,7 @@ class Course extends InID implements File
                         $nl.=$ar[$j];
                         $nl.=$this->FileObj->getSeparator();
                     } 
+                    $nl.="\r\n";
                $this->FileObj->update_dataFile($records[$i],$nl);
                 break;
             }
