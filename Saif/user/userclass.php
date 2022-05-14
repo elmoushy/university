@@ -8,7 +8,7 @@ class Admissions extends user
     private filemanager $FileObj;
     function __construct(){
         $this->FileObj=new filemanager();
-        $this->FileObj->setFilenames("user.txt");
+        $this->FileObj->setFilenames("user");
         $this->FileObj->setSeparator("~");
     }
     public function search()

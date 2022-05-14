@@ -13,7 +13,7 @@ class menu extends user implements File
     private $user_menu="";
     function __construct(){
         $this->FileObj=new filemanager();
-        $this->FileObj->setFilenames("menu.txt");
+        $this->FileObj->setFilenames("menu");
         $this->FileObj->setSeparator("~");
     }
     static public function IdToName($id)
@@ -98,6 +98,13 @@ class menu extends user implements File
                 {
                     $ar[7]=$this->getUser_menu();
                 }
+
+                for($j = 0; $j < count($ar) - 1;$j++)
+                {
+                    $nl.=$ar[$j] . $this->FileObj->getSeparator();
+                }
+                $nl.="\r\n";
+
                 $this->FileObj->update_dataFile($records[$i],$nl);
                 break;
             }

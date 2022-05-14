@@ -10,7 +10,7 @@ class Usertype extends InID
     public function __construct()
     {
         $this->FileObj = new filemanager();
-        $this->FileObj->setFilenames("usertype.txt");
+        $this->FileObj->setFilenames("usertype");
     }
     public function Store()
     {
@@ -33,6 +33,12 @@ class Usertype extends InID
                     {
                         $ar[1]=$this->getname();
                     }
+
+                    for($j = 0;$j < count($ar) - 1;$j++)
+                    {
+                        $nl.=$ar[$j].$this->FileObj->getSeparator();
+                    }
+                    $nl.="\r\n";
                $this->FileObj->update_dataFile($records[$i],$nl);
                 break;
             }
@@ -55,7 +61,7 @@ class Usertype extends InID
     static function IdToName($Id)
     {
         $FileObj = new filemanager();
-        $FileObj->setFilenames("usertype.txt");
+        $FileObj->setFilenames("usertype");
         return explode("~",$FileObj->getLineByID($Id))[1];
     }
     public function Search()

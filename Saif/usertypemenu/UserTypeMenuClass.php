@@ -18,7 +18,7 @@ class UserTypeMenu extends InID implements File
         if($MenuId!=null) $this->setMenuId($MenuId);
         else $this->MenuId = 0;
         $this->File = new filemanager();
-        $this->File->setFilenames("usertypemenu.txt");
+        $this->File->setFilenames("usertypemenu");
     }
 
     public function ToString()
@@ -93,10 +93,10 @@ class UserTypeMenu extends InID implements File
             $Now = new UserTypeMenu();
             $Now->FromStringToObject($List[$i]);
             $FileObj = new filemanager();
-            $FileObj->setFilenames("../usertype/usertype.txt");
+            $FileObj->setFilenames("../usertype/usertype");
             $TypeName = explode("~",$FileObj->getLineByID($Now->getTypeId()))[1];
             $FileObj = new filemanager();
-            $FileObj->setFilenames("../menu/menu.txt");
+            $FileObj->setFilenames("../menu/menu");
             $MenuName = explode($FileObj->getSeparator(),$FileObj->getLineByID($Now->getMenuId()))[1];
             $Array = [$Now->getID(),$TypeName,$MenuName];
             array_push($DisplayedList,$Array);
