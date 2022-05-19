@@ -21,7 +21,10 @@ class filemanager
         }
         return 0;
     }
-
+public function GetFileName()
+{
+    return $this->Filenames;
+}
     function store_dataFile($data)
     {
         $file=fopen($this->Filenames, "a+");
@@ -100,6 +103,7 @@ class filemanager
 
     function AllContents()
     {
+        
         $file = fopen($this->Filenames,"r");
 
         $results = array();

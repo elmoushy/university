@@ -3,7 +3,7 @@ session_start();
 include_once("functions.php");
 if(!isset($_SESSION["id"]))
 {
-    echo(" <script> location.replace('../saif/login/login.html'); </script>"); 
+    echo(" <script> location.replace('index.html'); </script>"); 
 }
 $UTM=-1;
 $FileObj=new filemanager();
