@@ -8,4 +8,8 @@ interface File{
 interface Pay{
     public function Pay(int $Amount);
 } 
+interface decorator {
+    public function TotalCost(float $Cost);
+}
+
 ?>
