@@ -2,7 +2,6 @@
 error_reporting(E_ERROR | E_PARSE);
 if(include_once("functions.php"))
 {
-    exit();
     include_once("functions.php");
     include_once("Interface.php"); 
     include_once("class_user.php");
