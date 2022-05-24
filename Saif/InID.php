@@ -1,5 +1,4 @@
 <?php
-
 class InID
 {
     protected $ID=0;

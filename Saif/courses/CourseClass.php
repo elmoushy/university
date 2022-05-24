@@ -1,10 +1,12 @@
 <?php
-if(!include_once("../InID.php"))
+if(include_once("InID.php"))
 {
     include_once("InID.php");
     include_once("functions.php");
     include_once "Interface.php";
-}else{
+}
+else
+{
     include_once("../functions.php");
     include_once "../Interface.php";
 }

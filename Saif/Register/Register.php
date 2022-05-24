@@ -1,19 +1,18 @@
 <?php
-
-if(!include_once("../InID.php"))
+if(include_once("InID.php"))
 {
     include_once("InID.php");
     include_once("functions.php");
     include_once("RegisterDetails/RegisterDetails.php");
     include_once "Interface.php";
-}else
+}
+else
 {
     include_once("../InID.php");
     include_once("../functions.php");
     include_once("../RegisterDetails/RegisterDetails.php");
     include_once "../Interface.php";
 }
-
 class Register extends InID implements File
 {
     private $StID;
