@@ -77,7 +77,7 @@ if(isset($_POST['submit']))
 {
     extract($_POST);
     $obj = new Order();
-    //$obj->TotalCost();
+    $obj->TotalCost();
     if($Name == "bus") ;
     if($Name == "football") ;
     if($Name == "gym") ;
