@@ -43,19 +43,23 @@
           <div class="login-form" align="center">
             <form action="RegisterDetailsAction.php" method="post">
                 <div style="color:white">
-                <h1>Course</h1>
+                <h1>Register Details</h1>
                 </div>
 
               <br/>
              <br/>
               <div class="content">
-                RegisterDetails Id <input type="number" name="ID" > <br>
-                Register Id <input type="number" name="rgID" > <br>
-                Course Id <input type="text" name="CrsID" > <br>
+                <input type="number" name="ID" placeholder="RegisterDetails Id"> <br>
+                 <input type="number" name="rgID" placeholder="Register Id"> <br>
+                 <input type="text" name="CrsID" placeholder="Course Id"> <br><br>
+                 <h4 style="color:white"><input value="bus" name="Name" class="shopitem-list" type="checkbox" > Add bus </h4> 
+                 <h4 style="color:white"><input value="football" name="Name" class="shopitem-list" type="checkbox"> Add football </h4> 
+                 <h4 style="color:white"><input value="gym" name="Name" class="shopitem-list" type="checkbox"> Add gym </h4> <br>
                 <input type="submit" value="Store" name = "Store">
                 <input type="submit" value="Update" name = "Update">
                 <input type="submit" value="Search"  name = "Search">
                 <input type="submit" value="Delete" name = "Delete">
               </div>
             </form>
+
           </div>

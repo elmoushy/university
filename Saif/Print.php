@@ -54,3 +54,32 @@ if(isset($_POST['submit']))
     $User->Trancaction();
 }
 ?>
+<html>
+<head>
+<h1>Additional options</h1>
+</head>
+<body>
+<form method="post">
+	<input value="bus" name="Name" class="shopitem-list" type="checkbox"> Add bus subscription <br>
+    <input value="football" name="Name" class="shopitem-list" type="checkbox">Add football subscription  <br>
+    <input value="gym" name="Name" class="shopitem-list" type="checkbox">Add gym subscription <br><br>
+    <input type="submit" value="submit" name="submit">
+</form>
+</body>
+</html>
+<?php
+include_once("decoration/add football subscription.php");
+include_once("decoration/add bus subscription.php");
+include_once("decoration/add gym subscription.php");
+include_once("decoration/addition.php");
+include_once("decoration/basic expenses.php");
+if(isset($_POST['submit']))
+{
+    extract($_POST);
+    $obj = new Order();
+    //$obj->TotalCost();
+    if($Name == "bus") ;
+    if($Name == "football") ;
+    if($Name == "gym") ;
+}
+?>

@@ -2,7 +2,6 @@
 
 include_once("RegisterDetails.php");
 include_once("RegisterDetails.html");
-
 if(isset($_POST["Store"]))
 {
     if($_POST["ID"] == null)

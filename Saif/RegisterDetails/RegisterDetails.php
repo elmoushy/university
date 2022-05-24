@@ -6,6 +6,11 @@ if(include_once("InID.php"))
     include_once("courses/CourseClass.php");
     include_once("Register/Register.php");
     include_once "Interface.php";
+    include_once("decoration/add football subscription.php");
+    include_once("decoration/add bus subscription.php");
+    include_once("decoration/add gym subscription.php");
+    include_once("decoration/addition.php");
+    include_once("decoration/basic expenses.php");
 }
 else
 {
@@ -14,6 +19,11 @@ else
     include_once("../courses/CourseClass.php");
     include_once("../Register/Register.php");
     include_once "../Interface.php";
+    include_once("../decoration/add football subscription.php");
+    include_once("../decoration/add bus subscription.php");
+    include_once("../decoration/add gym subscription.php");
+    include_once("../decoration/addition.php");
+    include_once("../decoration/basic expenses.php");
 }
 class RegisterDetails extends InID implements File
 {
@@ -27,6 +37,7 @@ class RegisterDetails extends InID implements File
     {
         $this->FileObj = new filemanager();
         $this->FileObj->setFilenames("RegisterDetails");
+        $obj = new Order();
         //$this->Crs = new Course();
         //$this->Reg = new Register();
     }
