@@ -1,12 +1,14 @@
 <?php 
-include_once("class_user.php");
+//include_once("class_user.php");
 if(include_once("functions.php"))
 {
     include_once("functions.php");
     include_once("Interface.php"); 
+    include_once("class_user.php");
 }
 else
 {
+    include_once("../class_user.php");
     include_once("../functions.php");
     include_once("../Interface.php");
 }
