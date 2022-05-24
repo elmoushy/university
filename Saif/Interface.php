@@ -5,3 +5,7 @@ interface File{
     public function Remove();
     public function Search();
 }
+interface Pay{
+    public function Pay(int $Amount);
+} 
+?>

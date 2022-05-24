@@ -1,11 +1,21 @@
 <?php 
-include_once("../class_user.php");
-include_once("../functions.php");
+include_once("class_user.php");
+if(include_once("functions.php"))
+{
+    include_once("functions.php");
+    include_once("Interface.php"); 
+}
+else
+{
+    include_once("../functions.php");
+    include_once("../Interface.php");
+}
 class Admissions extends user
 {
     protected $faculity_id=0;
     protected $userid_type=0;
     private filemanager $FileObj;
+    private Pay $Pay;
     function __construct(){
         $this->FileObj=new filemanager();
         $this->FileObj->setFilenames("user");
@@ -187,6 +197,32 @@ class Admissions extends user
             return $this->userid_type;
         }
     }
-    
+
+    /**
+     * Get the value of Pay
+     */ 
+    public function getPay()
+    {
+        if($this->getPay()>-1)
+        {
+            return $this->Pay;
+        }
+        
+    }
+
+    /**
+     * Set the value of Pay
+     *
+     * @return  self
+     */ 
+    public function setPay($Pay)
+    {
+        if($Pay>-1)
+        {
+            $this->Pay = $Pay;
+
+            return $this;
+        }
+    }
 }
 ?>
