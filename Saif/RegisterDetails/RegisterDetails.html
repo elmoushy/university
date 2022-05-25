@@ -52,6 +52,22 @@
                 <input type="number" name="ID" placeholder="RegisterDetails Id"> <br>
                  <input type="number" name="rgID" placeholder="Register Id"> <br>
                  <input type="text" name="CrsID" placeholder="Course Id"> <br>
+                 <select name="faculity" >
+                  <option value="0">Non</option>
+                  <?php 
+                      include_once "../functions.php";
+                      $File = new filemanager();
+                      $File->setFilenames("courses");
+                      
+                      $List = $File->AllContents();
+                      for ($i=0; $i < count($List)  - 1; $i++) { 
+                          $Array = explode("~",$List[$i]);
+                          $Id = $Array[0];
+                          $Name = $Array[1];
+                          echo "<option value='$Id'>$Name</option>";
+                      }
+                  ?>
+              </select>
                 <input type="submit" value="Store" name = "Store">
                 <input type="submit" value="Update" name = "Update">
                 <input type="submit" value="Search"  name = "Search">
