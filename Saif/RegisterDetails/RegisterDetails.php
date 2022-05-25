@@ -283,6 +283,7 @@ class RegisterDetails extends InID implements File
     {
         if($Crs != null)
         {
+            
             $this->Crs = $Crs;
         }
         

@@ -1,20 +1,16 @@
 <?php
 
 include_once("RegisterDetails.php");
-include_once("RegisterDetails.html");
+include_once("RegisterDetailsH.php");
 if(isset($_POST["Store"]))
 {
-    if($_POST["ID"] == null)
-    {
-        $Rd = new RegisterDetails();
-        $Rd->setRgID($_POST["rgID"]);
-        $Rd->setCrsID($_POST["CrsID"]);
-        $Rd->Store();
-    }else
-    {
-        echo("Not adding");
-    }
-    echo(" <script> location.replace('RegisterDetails.html'); </script>");
+    
+    $Rd = new RegisterDetails();
+    $Rd->setRgID($_GET["ID"]);
+    $Rd->setCrsID($_POST["Crs"]);
+    $Rd->Store();
+    
+    echo(" <script> location.replace('RegisterDetailsH.php'); </script>");
 }
 if(isset($_POST["Update"]))
 {
@@ -23,7 +19,7 @@ if(isset($_POST["Update"]))
     $Rd->setRgID($_POST["rgID"]);
     $Rd->setCrsID($_POST["CrsID"]);
     $Rd->Update();
-    echo(" <script> location.replace('RegisterDetails.html'); </script>");
+    echo(" <script> location.replace('RegisterDetailsH.php'); </script>");
 }
 if(isset($_POST["Search"]))
 {
@@ -33,7 +29,7 @@ if(isset($_POST["Search"]))
     $Rd->setCrsID($_POST["CrsID"]);
     $List = $Rd->Search();
     DisplayTable($List);
-    echo "<br><a href='RegisterDetails.html'>Return To Menu</a> ";
+    echo "<br><a href='RegisterDetailsH.php'>Return To Menu</a> ";
 }
 if(isset($_POST["Delete"]))
 {
@@ -42,6 +38,6 @@ if(isset($_POST["Delete"]))
     $Rd->setRgID($_POST["rgID"]);
     $Rd->setCrsID($_POST["CrsID"]);
     $Rd->Remove(true);
-    echo(" <script> location.replace('RegisterDetails.html'); </script>");
+    echo(" <script> location.replace('RegisterDetailsH.php'); </script>");
 }
 ?>

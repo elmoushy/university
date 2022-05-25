@@ -51,8 +51,7 @@
               <div class="content">
                 <input type="number" name="ID" placeholder="RegisterDetails Id"> <br>
                  <input type="number" name="rgID" placeholder="Register Id"> <br>
-                 <input type="text" name="CrsID" placeholder="Course Id"> <br>
-                 <select name="faculity" >
+                 <select name="Crs" >
                   <option value="0">Non</option>
                   <?php 
                       include_once "../functions.php";
@@ -68,6 +67,7 @@
                       }
                   ?>
               </select>
+                    </br>
                 <input type="submit" value="Store" name = "Store">
                 <input type="submit" value="Update" name = "Update">
                 <input type="submit" value="Search"  name = "Search">
