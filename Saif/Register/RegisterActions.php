@@ -15,7 +15,7 @@ if(isset($_POST["Store"]))
     } else {
         echo("Not adding");
     }
-    echo(" <script> location.replace('../RegisterDetails/RegisterDetailsH.php?ID=".$_POST["ID"]."'); </script>");
+    echo(" <script> location.replace('../RegisterDetails/RegisterDetailsH.php?ID=".$Rg->getID()."'); </script>");
 }
 if(isset($_POST["Update"]))
 {

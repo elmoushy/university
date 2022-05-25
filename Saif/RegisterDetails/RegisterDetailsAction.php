@@ -6,6 +6,8 @@ if(isset($_POST["Store"]))
 {
     
     $Rd = new RegisterDetails();
+    echo($_GET["ID"]);
+    exit(0);
     $Rd->setRgID($_GET["ID"]);
     $Rd->setCrsID($_POST["Crs"]);
     $Rd->Store();
