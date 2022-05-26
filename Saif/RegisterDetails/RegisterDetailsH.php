@@ -50,7 +50,7 @@
              <br/>
               <div class="content">
                 <input type="number" name="ID" placeholder="RegisterDetails Id"> <br>
-                 <input type="number" name="rgID" placeholder="Register Id"> <br>
+                 <input type="number" name="rgID" placeholder="Register Id" value="<?php echo $_GET["ID"]?>"> <br>
                  <select name="Crs" >
                   <option value="0">Non</option>
                   <?php 

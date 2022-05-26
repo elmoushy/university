@@ -27,8 +27,7 @@ if(isset($_POST["Update"]))
         //$Rg->getTotalHr($_POST["TotalHr"]);
         //$Rg->getTotalPriceHr($_POST["TotalPriceHr"]);
         $Rg->Update();
-        echo(" <script> location.replace('Register.html'); </script>");
-
+        echo(" <script> location.replace('../RegisterDetails/RegisterDetailsH.php?ID=".$Rg->getID()."'); </script>");
 }
 if(isset($_POST["Search"]))
 {
