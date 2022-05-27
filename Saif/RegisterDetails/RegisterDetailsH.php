@@ -41,7 +41,7 @@
           <br/>
           <br/>
           <div class="login-form" align="center">
-            <form action="RegisterDetailsAction.php?ID=<?php echo $_GET["ID"]?>" method="post">
+            <form action="RegisterDetailsAction.php" method="post">
                 <div style="color:white">
                 <h1>Register Details : <?php echo $_GET["ID"];?></h1>
                 </div>
@@ -50,7 +50,8 @@
              <br/>
               <div class="content">
                 <input type="number" name="ID" placeholder="RegisterDetails Id"> <br>
-                 <input type="number" name="rgID" placeholder="Register Id" value="<?php echo $_GET["ID"]?>"> <br>
+                 <input type="hidden" name="rgID" value="<?php echo $_GET["ID"]?>"> <br>
+                 
                  <select name="Crs" >
                   <option value="0">Non</option>
                   <?php 
