@@ -23,6 +23,8 @@ if(isset($_POST["Update"]))
 }
 if(isset($_POST["Search"]))
 {
+    echo $_GET["ID"]."<br>";
+    exit();
     $Rd = new RegisterDetails();
     $Rd->setID($_POST["ID"]);
     $Rd->setRgID($_POST["rgID"]);

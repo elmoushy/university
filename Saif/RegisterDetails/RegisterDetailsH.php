@@ -41,9 +41,9 @@
           <br/>
           <br/>
           <div class="login-form" align="center">
-            <form action="RegisterDetailsAction.php" method="post">
+            <form action="RegisterDetailsAction.php?ID=<?php echo $_GET["ID"]?>" method="post">
                 <div style="color:white">
-                <h1>Course</h1>
+                <h1>Register Details : <?php echo $_GET["ID"];?></h1>
                 </div>
 
               <br/>
