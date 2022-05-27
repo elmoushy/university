@@ -167,7 +167,6 @@ public function GetFileName()
         if($this->Separator!=null)
         {
             return $this->Separator;
-            return $this;
         }
         
     }

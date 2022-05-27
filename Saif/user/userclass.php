@@ -226,8 +226,8 @@ class Admissions extends user
         if($Pay!=null)
         {
             $this->Pay = $Pay;
-            return $this;
         }
+        return $this;
     }
 }
 ?>
