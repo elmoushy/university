@@ -43,7 +43,7 @@
           <div class="login-form" align="center">
             <form action="RegisterDetailsAction.php" method="post">
                 <div style="color:white">
-                <h1>Register Details : <?php echo $_GET["ID"];?></h1>
+                <h1> <a href='../Register/Register.html'>Register Details</a> : <?php echo $_GET["ID"];?></h1>
                 </div>
 
               <br/>

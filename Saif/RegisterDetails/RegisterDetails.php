@@ -208,11 +208,15 @@ class RegisterDetails extends InID implements File
         }
         
         $DisplayedList = [];
-        $Header = ["ID","rgID","CrsID","Hour","HourPrice"];
+        $Header = ["ID","Crs","Hour","HourPrice"];
         array_push($DisplayedList,$Header);
-        for ($i=0; $i < count($List) - 1; $i++) { 
+        for ($i=0; $i < count($List) - 1; $i++) 
+        { 
             $ar = explode($this->FileObj->getSeparator(),$List[$i]);
-           array_push($DisplayedList,$ar);
+            array_splice($ar,1,1);
+            $this->setCrsID($ar[1]);
+            $ar[1] = $this->Crs->getName();
+            array_push($DisplayedList,$ar);
         }
         return $DisplayedList;
     }
