@@ -41,11 +41,7 @@ class login
         
     }
 
-    /**
-     * Set the value of login
-     *
-     * @return  self
-     */ 
+
     public function setLogin($login)
     {
         if($login!="")
@@ -67,11 +63,7 @@ class login
         }
     }
 
-    /**
-     * Set the value of password
-     *
-     * @return  self
-     */ 
+
     public function setPassword($password)
     {
         if($password!="")

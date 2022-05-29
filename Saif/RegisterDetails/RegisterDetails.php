@@ -267,9 +267,7 @@ class RegisterDetails extends InID implements File
         }
     }
 
-    /**
-     * Get the value of Crs
-     */ 
+  
     public function getCrs()
     {
         if($this->Crs != null)
@@ -278,11 +276,7 @@ class RegisterDetails extends InID implements File
         }
     }
 
-    /**
-     * Set the value of Crs
-     *
-     * @return  self
-     */ 
+  
     public function setCrs($Crs)
     {
         if($Crs != null)
@@ -295,9 +289,7 @@ class RegisterDetails extends InID implements File
         return $this;
     }
 
-    /**
-     * Get the value of CrsID
-     */ 
+ 
     public function getCrsID()
     {
         if($this->CrsID > 0)
@@ -306,11 +298,7 @@ class RegisterDetails extends InID implements File
         }
     }
 
-    /**
-     * Set the value of CrsID
-     *
-     * @return  self
-     */ 
+
     public function setCrsID($CrsID)
     {
         if($CrsID > 0)
@@ -322,9 +310,7 @@ class RegisterDetails extends InID implements File
         }
     }
 
-    /**
-     * Get the value of FileObj
-     */ 
+
     public function getFileObj()
     {
         if($this->FileObj != null)
@@ -334,11 +320,7 @@ class RegisterDetails extends InID implements File
         
     }
 
-    /**
-     * Set the value of FileObj
-     *
-     * @return  self
-     */ 
+
     public function setFileObj($FileObj)
     {
         if($FileObj != null)

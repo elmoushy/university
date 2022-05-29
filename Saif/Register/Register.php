@@ -249,11 +249,6 @@ class Register extends InID implements File
         
     }
 
-    /**
-     * Set the value of StID
-     *
-     * @return  self
-     */ 
     public function setStID($StID)
     {
         if($StID > 0)
@@ -273,11 +268,7 @@ class Register extends InID implements File
         }
     }
 
-    /**
-     * Set the value of Date
-     *
-     * @return  self
-     */ 
+
     public function setDate($Date)
     {
         if($Date != null)
@@ -297,11 +288,7 @@ class Register extends InID implements File
         }
     }
 
-    /**
-     * Set the value of totalHr
-     *
-     * @return  self
-     */ 
+ 
     public function setTotalHr($totalHr)
     {
         if($totalHr >= 0)
