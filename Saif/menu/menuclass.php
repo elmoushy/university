@@ -131,11 +131,6 @@ class menu extends user implements File
         }
     }
 
-    /**
-     * Set the value of order_m
-     *
-     * @return  self
-     */ 
     public function setOrder_m($order_m)
     {
         if($order_m!="")
@@ -158,11 +153,6 @@ class menu extends user implements File
         
     }
 
-    /**
-     * Set the value of product_m
-     *
-     * @return  self
-     */ 
     public function setProduct_m($product_m)
     {
         if($product_m!="")
@@ -185,11 +175,7 @@ class menu extends user implements File
         
     }
 
-    /**
-     * Set the value of user_m
-     *
-     * @return  self
-     */ 
+   
     public function setUser_m($user_m)
     {
         if($user_m!="")
@@ -210,11 +196,6 @@ class menu extends user implements File
         return $this->user_type;
     }
 
-    /**
-     * Set the value of user_type
-     *
-     * @return  self
-     */ 
     public function setUser_type($user_type)
     {
         if($user_type!="")

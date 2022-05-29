@@ -311,11 +311,7 @@ class Register extends InID implements File
         }      
     }
 
-    /**
-     * Set the value of totalPriceHr
-     *
-     * @return  self
-     */ 
+  
     public function setTotalPriceHr($totalPriceHr)
     {
         if($totalPriceHr)
@@ -342,11 +338,7 @@ class Register extends InID implements File
         }
     }
 
-    /**
-     * Set the value of RegisterDetails
-     *
-     * @return  self
-     */ 
+    
     public function setRegisterDetails($RegisterDetails)
     {
         if($RegisterDetails != null)
