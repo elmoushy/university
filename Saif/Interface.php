@@ -1,4 +1,6 @@
 <?php
+include_once("functions.php");
+
 interface File{
     public function Store();
     public function Update();
@@ -15,9 +17,14 @@ interface decorator {
 abstract class observer
 {
     private $subject;
+    private $FileObj;
+
+
 
     public function __construct($subject)
     {
+        $this->FileObj ->setFilenames("observer");
+        
         $this->subject = $subject;
 
         $this->subject->attach($this);

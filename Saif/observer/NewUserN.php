@@ -7,7 +7,7 @@ class NewUserN extends observer
     function update()
     {
         //testing
-        echo ("id name pass email");
+        $this->FileObj->Store("New User Came");
     }
 }
 
