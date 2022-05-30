@@ -11,6 +11,7 @@ else
     include_once("../class_user.php");
     include_once("../functions.php");
     include_once("../Interface.php");
+    include_once("../observer/NewUserN.php");
 }
 class Admissions extends user
 {
@@ -18,6 +19,7 @@ class Admissions extends user
     protected $userid_type=0;
     private filemanager $FileObj;
     private Pay $Pay;
+    private $Sub;
     function __construct(){
         $this->FileObj=new filemanager();
         $this->FileObj->setFilenames("user");
@@ -100,6 +102,9 @@ class Admissions extends user
         $this->setpassword($pass);
         $record=$id.$s.$this->getUserid_type().$s.$this->getName().$s.$this->getPassword().$s.$this->getPhone_number().$s.$this->getDate_of_birthday().$s.$this->getFaculity_id().$s.$email.$s;
         $this->FileObj->store_dataFile($record);
+        $Sub = new Subject();
+        new NewUserN($Sub);
+        $Sub->notifyAllObserv();
     }
     public function Trancaction()
     {

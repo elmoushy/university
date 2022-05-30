@@ -33,13 +33,6 @@
           <br/>
           <br/>
           <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
           <div class="login-form" align="center">
           <form action="user.php" method="POST">
                 <div style="color:white">
