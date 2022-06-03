@@ -155,9 +155,10 @@ public function GetFileName()
             {
                 $this->Filenames = $Filenames."/".$Filenames.".txt";
             }
-            else if(file_exists("../".$Filenames."txt"))
+            else if("../".$Filenames."txt")
             {
-                echo "hello";
+                //echo "hello";
+                //exit;
                 $this->Filenames = "../".$Filenames.".txt";
             }           
         }
@@ -171,7 +172,13 @@ public function GetFileName()
         }
         
     }
-
+    public function new_php_file($path,$name,$line)
+    {
+        $fname=$path.$name."php";
+        $file=fopen($fname, "a+");
+        fwrite($file,$line);
+        fclose($file);
+    }
     public function setSeparator($Separator)
     {
         if($Separator!=null)

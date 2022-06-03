@@ -34,20 +34,22 @@ class dec extends InID implements File
         $records = $this->File->AllContents();
         $newRecords = array();
         $s=$this->File->getSeparator();
+        $Nameofclass=$this->getName();
         for($i=0;$i<count($records);$i++)
         {
             $ar = explode($this->FileObj->getSeparator(),$records[$i]);
             if($i==9)
             {
-                $line=$ar[0].$s.$this->getName().$s.$ar[2].$s;
+                $line=$ar[0].$this->getName().$ar[2];
                 $newRecords[$i]=$line;
+                $this->File->new_php_file("decrator","$Nameofclass",$newRecords[$i]);
             }
             else
             {
                 $newRecords[$i]=$records[$i];
+                $this->File->new_php_file("decrator","$Nameofclass",$newRecords[$i]);
             }
         }
-
     }
     public function Update()
     {
