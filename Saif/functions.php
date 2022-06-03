@@ -103,8 +103,7 @@ public function GetFileName()
 
     function AllContents()
     {
-        
-        $file = fopen($this->Filenames,"r");
+        $file = fopen($this->Filenames,"r+");
         $results = array();
         $i=0;
         while(!feof($file))
@@ -155,9 +154,13 @@ public function GetFileName()
             }else if(file_exists($Filenames."/".$Filenames.".txt"))
             {
                 $this->Filenames = $Filenames."/".$Filenames.".txt";
-            }             
+            }
+            else if(file_exists("../".$Filenames."txt"))
+            {
+                echo "hello";
+                $this->Filenames = "../".$Filenames.".txt";
+            }           
         }
-        
         return $this;
     }
     public function getSeparator()

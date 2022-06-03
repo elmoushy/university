@@ -15,12 +15,15 @@ class dec extends InID implements File
 {
     protected $price=0;
     private $FileObj;
-    
+    private $File;
     public function __construct()
     {
         $this->FileObj = new filemanager();
         $this->FileObj->setFilenames("decrator");
         $this->FileObj->setSeparator("~");
+        $this->File = new filemanager();
+        $this->File->setFilenames("addclassform");
+        $this->File->setSeparator("~");
     }
     public function Store()
     {
@@ -28,6 +31,23 @@ class dec extends InID implements File
         $id=$this->FileObj->getId()+1;
         $record=$id.$s.$this->getName().$s.$this->getPrice().$s;
         $this->FileObj->store_dataFile($record);
+        $records = $this->File->AllContents();
+        $newRecords = array();
+        $s=$this->File->getSeparator();
+        for($i=0;$i<count($records);$i++)
+        {
+            $ar = explode($this->FileObj->getSeparator(),$records[$i]);
+            if($i==9)
+            {
+                $line=$ar[0].$s.$this->getName().$s.$ar[2].$s;
+                $newRecords[$i]=$line;
+            }
+            else
+            {
+                $newRecords[$i]=$records[$i];
+            }
+        }
+
     }
     public function Update()
     {
