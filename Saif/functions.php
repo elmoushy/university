@@ -105,7 +105,6 @@ public function GetFileName()
     {
         
         $file = fopen($this->Filenames,"r");
-
         $results = array();
         $i=0;
         while(!feof($file))
@@ -128,7 +127,6 @@ public function GetFileName()
                 {
                     $lastid=$Arrayline[0];
                 }
-       
              }
             fclose($file);
          }

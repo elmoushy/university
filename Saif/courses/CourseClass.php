@@ -114,7 +114,6 @@ class Course extends InID implements File
                 }
             }
         }
-        
         $DisplayedList = [];
         $Header = ["Id","Name","Hour","HourPrice"];
         array_push($DisplayedList,$Header);
