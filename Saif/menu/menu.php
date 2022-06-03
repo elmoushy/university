@@ -11,6 +11,7 @@ if(isset($_POST["Store"]))
     $obj->setUser_type($userType_menu);
     $obj->setUser_type_menu($userTypeMenu_menu);
     $obj->setUser_menu($userMenu_menu);
+    $obj->setDecorator($decorator);
     $obj->Store();
     echo(" <script> location.replace('menu.html'); </script>");
 }
@@ -25,6 +26,7 @@ if(isset($_POST["Update"]))
     $obj->setUser_type($userType_menu);
     $obj->setUser_type_menu($userTypeMenu_menu);
     $obj->setUser_menu($userMenu_menu);
+    $obj->setDecorator($decorator);
     $obj->Update();
     echo(" <script> location.replace('menu.html'); </script>");
 }
@@ -39,6 +41,7 @@ if(isset($_POST["Search"]))
     $obj->setUser_type($userType_menu);
     $obj->setUser_type_menu($userTypeMenu_menu);
     $obj->setUser_menu($userMenu_menu);
+    $obj->setDecorator($decorator);
     $obj = $obj->Search();
     DisplayTable($obj);
     echo "<br><a href='menu.html'>Return To Menu</a> ";
@@ -54,6 +57,7 @@ if(isset($_POST["Delete"]))
     $obj->setUser_type($userType_menu);
     $obj->setUser_type_menu($userTypeMenu_menu);
     $obj->setUser_menu($userMenu_menu);
+    $obj->setDecorator($decorator);
     $obj->Remove();
     echo(" <script> location.replace('menu.html'); </script>");
 }

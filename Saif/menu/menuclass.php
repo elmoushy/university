@@ -11,6 +11,7 @@ class menu extends user implements File
     private $user_type="";
     private $user_type_menu="";
     private $user_menu="";
+    private $decorator="";
     function __construct(){
         $this->FileObj=new filemanager();
         $this->FileObj->setFilenames("menu");
@@ -57,7 +58,7 @@ class menu extends user implements File
     {
         $s=$this->FileObj->getSeparator();
         $id=$this->FileObj->getId($s)+1;
-        $record=$id.$s.$this->getName().$s.$this->getOrder_m().$s.$this->getProduct_m().$s.$this->getUser_m().$s.$this->getUser_type().$s.$this->getUser_type_menu().$s.$this->getUser_menu().$s;
+        $record=$id.$s.$this->getName().$s.$this->getOrder_m().$s.$this->getProduct_m().$s.$this->getUser_m().$s.$this->getUser_type().$s.$this->getUser_type_menu().$s.$this->getUser_menu().$s.$this->getDecorator().$s;
         $this->FileObj->store_dataFile($record);
     }
     public function Update()
@@ -98,13 +99,15 @@ class menu extends user implements File
                 {
                     $ar[7]=$this->getUser_menu();
                 }
-
+                if($this->decorator!="")
+                {
+                    $ar[8]=$this->getDecorator();
+                }
                 for($j = 0; $j < count($ar) - 1;$j++)
                 {
                     $nl.=$ar[$j] . $this->FileObj->getSeparator();
                 }
                 $nl.="\r\n";
-
                 $this->FileObj->update_dataFile($records[$i],$nl);
                 break;
             }
@@ -244,6 +247,30 @@ class menu extends user implements File
     {
         $this->user_menu = $user_menu;
 
+        return $this;
+    }
+
+    /**
+     * Get the value of decorator
+     */ 
+    public function getDecorator()
+    {
+        return $this->decorator;
+    }
+
+    /**
+     * Set the value of decorator
+     *
+     * @return  self
+     */ 
+    public function setDecorator($decorator)
+    {
+        if($decorator!="")
+        {
+            $this->decorator = $decorator;
+
+            
+        }
         return $this;
     }
 }
