@@ -1,4 +1,5 @@
 <?php
+//error_reporting (E_ERROR | E_PARSE);
 include_once("Register/Register.php");
 include_once("user/userclass.php");
 include_once("RegisterDetails/RegisterDetails.php");
