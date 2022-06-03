@@ -7,32 +7,31 @@ if(include_once("InID.php"))
 }
 else
 {
+    include_once("../InID.php");
     include_once("../functions.php");
     include_once "../Interface.php";
 }
-class Course extends InID implements File
+class dec extends InID implements File
 {
-    protected $Hour = 0;
-    protected $HourPrice = 0;
+    protected $price=0;
     private $FileObj;
     
     public function __construct()
     {
         $this->FileObj = new filemanager();
-        $this->FileObj->setFilenames("courses");
+        $this->FileObj->setFilenames("decrator");
         $this->FileObj->setSeparator("~");
     }
     public function Store()
     {
-        $this->ID = $this->FileObj->getId() + 1;
-        $s = $this->FileObj->getSeparator();
-        $record = $this->ID.$s.$this->name.$s.$this->Hour.$s.$this->HourPrice.$s;
+        $s=$this->FileObj->getSeparator();
+        $id=$this->FileObj->getId()+1;
+        $record=$id.$s.$this->getName().$s.$this->getPrice().$s;
         $this->FileObj->store_dataFile($record);
     }
     public function Update()
     {
         $records = $this->FileObj->AllContents();
-        $pos = 0;
         for($i=0;$i<count($records);$i++)
         {
             $ar = explode($this->FileObj->getSeparator(),$records[$i]);
@@ -43,13 +42,9 @@ class Course extends InID implements File
                     {
                         $ar[1]=$this->getName();
                     }
-                    if($this->Hour!=0)
+                    if($this->price!=-1)
                     {
-                        $ar[2]=$this->getHour();
-                    }
-                    if($this->HourPrice!=0)
-                    {
-                        $ar[3]=$this->getHourPrice();
+                        $ar[2]=$this->getPrice();
                     }
                     for($j=0; $j<count($ar)-1;$j++)
                     {
@@ -78,8 +73,8 @@ class Course extends InID implements File
 
     public function Search()
     {
+        // Id~Name~Price
         $List=$this->FileObj->AllContents();
-        // Id~Name~Hour~Price
         for ($i=0; $i < count($List); $i++) { 
             $Array = explode($this->FileObj->getSeparator(),$List[$i]);
             if($this->ID!=0)
@@ -98,17 +93,9 @@ class Course extends InID implements File
                     $i--;
                 }
             }
-            if($this->Hour!=0)
+            if($this->price!=0)
             {
-                if($this->Hour!=intval($Array[2]))
-                {
-                    array_splice($List,$i,1);
-                    $i--;
-                }
-            }
-            if($this->HourPrice!=0)
-            {
-                if($this->HourPrice!=intval($Array[3]))
+                if($this->price!=intval($Array[2]))
                 {
                     array_splice($List,$i,1);
                     $i--;
@@ -116,7 +103,7 @@ class Course extends InID implements File
             }
         }
         $DisplayedList = [];
-        $Header = ["Id","Name","Hour","HourPrice"];
+        $Header = ["Id","Name","price"];
         array_push($DisplayedList,$Header);
         for ($i=0; $i < count($List); $i++) { 
             $Array = explode($this->FileObj->getSeparator(),$List[$i]);
@@ -124,75 +111,30 @@ class Course extends InID implements File
         }
         return $DisplayedList;
     }
-    public function getAllCourses()
+
+
+    /**
+     * Get the value of price
+     */ 
+    public function getPrice()
     {
-        $allc=array();
-        $records = $this->FileObj->AllContents();
-        for($i=0; $i<count($records);$i++)
-        {
-            $ar=explode($this->FileObj->getSeparator(),$records[$i]);
-            $allc[$i]=$this->getOneCourse($ar[0]);            
-        }
-        return $allc;
-    }
-    public function getOneCourse($ID)
-    {
-        $rec = $this->FileObj->getLineByID($ID);
-        $ar = explode($this->FileObj->getSeparator(),$rec);
-        $c=new Course();
-        $c->ID = $ar[0];
-        $c->name = $ar[1];
-        $c->Hour = $ar[2];
-        $c->HourPrice = $ar[3];
-        return $c;
-    }
-    public function getHour()
-    {
-        if($this->Hour >0)
-        {
-            return $this->Hour;
-        }        
+        return $this->price;
     }
 
-    public function setHour($H)
+    /**
+     * Set the value of price
+     *
+     * @return  self
+     */ 
+    public function setPrice($price)
     {
-        if($H>0)
+        if($price > 0)
         {
-            $this->Hour = $H;
+            $this->price = $price;
         }
-    }
+       
 
-    public function getHourPrice()
-    {
-        if($this->HourPrice > 0)
-        {
-            return $this->HourPrice;
-        }
-    }
-
-    public function setHourPrice($HP)
-    {
-        if($HP > 0)
-        {
-            $this->HourPrice = $HP;
-        }
+        return $this;
     }
 }
-
-/*$c = new Course();
-$c->updateCourse(6,1,"CS214");
-//$c->removeCourse(1);
-//$c->name = "MCOM204";
-//$c->setHour(3);
-//$c->setHourPrice("1100");
-//$c->storeCourse();
-$ac = $c->getAllCourses();
-echo $ac[0]->getID()."</br>";
-echo "<table border=1>";
-for($i=0;$i<count($ac);$i++)
-{
-    echo "<tr><td>".$ac[$i]->ID."</td><td>".$ac[$i]->name."</td><td>".$ac[$i]->GetHour()."</td><td>".$ac[$i]->GetHourPrice()."</td></tr>";
-}
-echo "</table>"
-*/
 ?>
