@@ -1,5 +1,7 @@
 <?php
 include_once("functions.php");
+include_once("observer/NewUserN.php");
+include_once("observer/NewRegistered.php");
 
 interface File{
     public function Store();
@@ -18,17 +20,6 @@ abstract class observer
 {
     private $subject;
     private $FileObj;
-
-
-
-    public function __construct($subject)
-    {
-        $this->FileObj ->setFilenames("observer");
-        
-        $this->subject = $subject;
-
-        $this->subject->attach($this);
-    }
 
     public abstract function update(); 
 }
@@ -52,4 +43,10 @@ class Subject
 
 }
 
+/*$sub = new Subject();
+new NewUserN($sub);
+new NewRegister($sub);
+
+$sub->notifyAllObserv();
+*/
 ?>
