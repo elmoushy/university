@@ -174,7 +174,7 @@ public function GetFileName()
     }
     public function new_php_file($path,$name,$line)
     {
-        $fname=$path.$name."php";
+        $fname=$path.$name.".php";
         $file=fopen($fname, "a+");
         fwrite($file,$line);
         fclose($file);

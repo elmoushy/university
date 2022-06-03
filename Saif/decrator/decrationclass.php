@@ -25,22 +25,31 @@ class dec extends InID implements File
         $this->File->setFilenames("addclassform");
         $this->File->setSeparator("~");
     }
-    public function Store()
+    public function interphp()
     {
-        $s=$this->FileObj->getSeparator();
-        $id=$this->FileObj->getId()+1;
-        $record=$id.$s.$this->getName().$s.$this->getPrice().$s;
-        $this->FileObj->store_dataFile($record);
         $records = $this->File->AllContents();
         $newRecords = array();
         $s=$this->File->getSeparator();
         $Nameofclass=$this->getName();
+        $line_str="";
         for($i=0;$i<count($records);$i++)
         {
             $ar = explode($this->FileObj->getSeparator(),$records[$i]);
             if($i==9)
             {
-                $line=$ar[0].$this->getName().$ar[2];
+                $str=explode(" ",$this->getName());
+                for($j=0;$j< count($str);$j++)
+                {
+                    if($str[$j]=="~"||$str[$j]=="!"||$str[$j]=="@"||$str[$j]=="#"||$str[$j]=="$"||$str[$j]=="%")
+                    {
+                        $line_str.="_";
+                    }
+                    else
+                    {
+                        $line_str.=$str[$j];
+                    }
+                }
+                $line=$ar[0].$line_str.$ar[2];
                 $newRecords[$i]=$line;
                 $this->File->new_php_file("decrator","$Nameofclass",$newRecords[$i]);
             }
@@ -50,6 +59,14 @@ class dec extends InID implements File
                 $this->File->new_php_file("decrator","$Nameofclass",$newRecords[$i]);
             }
         }
+    }
+    public function Store()
+    {
+        $s=$this->FileObj->getSeparator();
+        $id=$this->FileObj->getId()+1;
+        $record=$id.$s.$this->getName().$s.$this->getPrice().$s;
+        $this->FileObj->store_dataFile($record);
+        $this->interphp();
     }
     public function Update()
     {
@@ -62,7 +79,9 @@ class dec extends InID implements File
                     $nl="";
                     if($this->name!="")
                     {
+                        unlink('decrator'.$ar[1].'.php');
                         $ar[1]=$this->getName();
+                        $this->interphp();
                     }
                     if($this->price!=-1)
                     {
@@ -78,19 +97,23 @@ class dec extends InID implements File
                 break;
             }
         }
+
     }
     public function Remove()
     {
+        $pos="";
         $records = $this->FileObj->AllContents();
         for($i=0; $i<count($records);$i++)
         {
             $ar=explode($this->FileObj->getSeparator(),$records[$i]);
             if($this->ID == $ar[0])
             {
+                $pos=$ar[1];
                $this->FileObj->remove_dataFile($records[$i]);
                break;
             }
         }
+        unlink('decrator'.$pos.'.php');
     }
 
     public function Search()
