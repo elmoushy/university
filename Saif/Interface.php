@@ -43,10 +43,10 @@ class Subject
 
 }
 
-$sub = new Subject();
+/*$sub = new Subject();
 new NewUserN($sub);
 new NewRegister($sub);
 
 $sub->notifyAllObserv();
-
+*/
 ?>
