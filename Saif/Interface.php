@@ -21,7 +21,7 @@ abstract class observer
     private $subject;
     private $FileObj;
 
-    public abstract function update(); 
+    public abstract function update($mes); 
 }
 
 class Subject
@@ -33,11 +33,11 @@ class Subject
         array_push($this->Observer,$Observer);
     }
 
-    public function notifyAllObserv()
+    public function notifyAllObserv($mes)
     {
         foreach ($this->Observer as $Item )
         {
-            $Item->update();
+            $Item->update($mes);
         }
     }
 

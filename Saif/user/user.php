@@ -1,5 +1,6 @@
 <?php
 include_once("userclass.php");
+include_once("../Interface.php");
 extract($_POST);
 if(isset($_POST["Store"]))
 {
@@ -10,6 +11,16 @@ if(isset($_POST["Store"]))
     $obj->setfaculity_id($faculity);
     $obj->setUserid_type($userid_type);
     $obj->Store();
+
+    $sub = new Subject();
+    new NewUserN($sub);
+
+    
+
+    $mes = $obj->getId()." ".$obj->getName()." ".$obj->getEmail();
+
+    $sub->notifyAllObserv($mes);
+
     echo(" <script> location.replace('User .php'); </script>");
 }
 if(isset($_POST["Update"]))

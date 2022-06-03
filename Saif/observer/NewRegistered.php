@@ -14,7 +14,7 @@ class NewRegister extends observer
             $this->subject->attach($this);
     }
 
-    function update()
+    function update($mes)
     {
         $this->FileObj->store_dataFile("Register Added new");
     }

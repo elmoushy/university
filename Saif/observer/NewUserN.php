@@ -8,16 +8,16 @@ class NewUserN extends observer
     {
         $this->FileObj = new filemanager();
             $this->FileObj ->setFilenames("observer");
-            
+
             $this->subject = $subject;
-    
+
             $this->subject->attach($this);
     }
 
-    function update()
+    function update($mes)
     {
         //testing
-        $this->FileObj->store_dataFile("New User Came");
+        $this->FileObj->store_dataFile("New User Came: ".$mes);
     }
 }
 
