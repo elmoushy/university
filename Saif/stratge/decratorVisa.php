@@ -8,7 +8,7 @@ else
     include_once("../Interface.php");
 }
 Class Visa implements Pay{
-    public function Pay(int $Amount) {
+    public function Pay() {
         echo "Pay with Fawry";
     }
 }

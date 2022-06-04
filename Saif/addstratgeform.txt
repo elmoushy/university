@@ -9,7 +9,7 @@ else
 }
 class ~Fawry~ implements Pay
 {
-    public function Pay(int $Amount) {
+    public function Pay() {
         echo "Pay with Fawry";
     }
 }

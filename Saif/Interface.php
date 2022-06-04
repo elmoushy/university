@@ -10,7 +10,7 @@ interface File{
     public function Search();
 }
 interface Pay{
-    public function Pay(int $Amount);
+    public function Pay();
 } 
 interface decorator {
     public function TotalCost(float $Cost);
