@@ -35,7 +35,7 @@
           <br/>
           <br/>
           <br/>
-          <div class="login-form" align="center" style="color:rgb(233, 242, 240);>
+          <div class="login-form" align="center" style="color:rgb(233, 242, 240)">
             <form action="Course.php" method="post">
                 <div style="color:white">
                 <h1>Additional Services</h1>
