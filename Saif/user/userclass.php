@@ -97,6 +97,11 @@ class Admissions extends user
         $s=$this->FileObj->getSeparator();
         $id=$this->FileObj->getId($s)+1;
         $email=$this->getName().$id."@hel.eg";
+
+
+        $this->setEmail($email);
+        $this->setID($id);
+
         $pass="hel".$this->getPhone_number();
         $this->setpassword($pass);
         $record=$id.$s.$this->getUserid_type().$s.$this->getName().$s.$this->getPassword().$s.$this->getPhone_number().$s.$this->getDate_of_birthday().$s.$this->getFaculity_id().$s.$email.$s;
@@ -183,22 +188,6 @@ class Admissions extends user
              return $this;
         }
         
-    }
-    public function setemail($email)
-    {
-        if($email!=null)
-        {
-            $this->email = $email;
-             return $this;
-        }
-        
-    }
-    public function getemail()
-    {
-        if($this->email!==null)
-        {
-            return $this->userid_type;
-        }
     }
 
     /**

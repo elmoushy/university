@@ -20,6 +20,8 @@ if(isset($_POST["Store"]))
 if(isset($_POST["Update"]))
 {
 
+    if($_POST["ID"] > 0)
+    {
         $Rg = new Register();
         $Rg->setID($_POST["ID"]);
         $Rg->setStID($_POST["StID"]);
@@ -28,6 +30,13 @@ if(isset($_POST["Update"]))
         //$Rg->getTotalPriceHr($_POST["TotalPriceHr"]);
         $Rg->Update();
         echo(" <script> location.replace('../RegisterDetails/RegisterDetailsH.php?ID=".$Rg->getID()."'); </script>");
+    }else
+    {
+        echo(" <script> location.replace('Register.html'); </script>");
+    }
+
+
+       
 }
 if(isset($_POST["Search"]))
 {
@@ -45,13 +54,17 @@ if(isset($_POST["Search"]))
 }
 if(isset($_POST["Delete"]))
 { 
-    $Rg = new Register();
-    $Rg->setID($_POST["ID"]);
-    $Rg->setStID($_POST["StID"]);
-    $Rg->setDate($_POST["Date"]);
-    //$Rg->getTotalHr($_POST["TotalHr"]);
-    //$Rg->getTotalPriceHr($_POST["TotalPriceHr"]);
-    $Rg->Remove();
+
+    if($_POST["ID"] > 0)
+    {
+        $Rg = new Register();
+        $Rg->setID($_POST["ID"]);
+        $Rg->setStID($_POST["StID"]);
+        $Rg->setDate($_POST["Date"]);
+        //$Rg->getTotalHr($_POST["TotalHr"]);
+        //$Rg->getTotalPriceHr($_POST["TotalPriceHr"]);
+        $Rg->Remove();
+    }
     echo(" <script> location.replace('Register.html'); </script>");
 
 }

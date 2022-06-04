@@ -155,7 +155,7 @@ class RegisterDetails extends InID implements File
         {
             $ar = explode($this->FileObj->getSeparator(),$Rf[$i]);
 
-            if($ar[0] == $this->ID)
+            if($ar[0] == $this->ID && $ar[1] == $this->rgID)
             {
                 if($aD)
                 {
