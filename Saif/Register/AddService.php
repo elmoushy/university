@@ -35,6 +35,7 @@
           <br/>
           <br/>
           <br/>
+<<<<<<< HEAD
           <br/>
           <br/>
           <br/>
@@ -50,6 +51,15 @@
            <input type="hidden" name="rgID" value="<?php echo $_GET["ID"]?>"> <br>
            <select name="Serves" >
              <option value="0">Non</option>
+=======
+          <div class="login-form" align="center" style="color:rgb(233, 242, 240)">
+            <form action="Course.php" method="post">
+                <div style="color:white">
+                <h1>Additional Services</h1>
+                </div>
+           <selectstyle="color:rgb(233, 242, 240); >
+             <option style="color:rgb(233, 242, 240); value="0"></option>
+>>>>>>> 05531a6cdd6936836ab7eb17333950b0fb6869a6
                     <?php 
                         include_once "../functions.php";
                         $File = new filemanager();
@@ -59,10 +69,11 @@
                             $Array = explode("~",$List[$i]);
                             $Id = $Array[0];
                             $Name = $Array[1];
-                            echo "<option value='$Id'>$Name</option>";
+                            echo "$Name <input type='checkbox' name='$Name' value='$Id'> <br>";
                         }
                     ?>
             </select>
+            <br>
                 <input type="submit" value="Subscribe" name = "Store">
             </form>
           </div>
