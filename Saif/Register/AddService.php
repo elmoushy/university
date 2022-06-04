@@ -41,12 +41,13 @@
           <br/>
           <br/>
           <div class="login-form" align="center">
-            <form action="Course.php" method="post">
+            <form action="AddServiceAction.php" method="post">
                 <div style="color:white">
                 <h1>Additional Services</h1>
                 </div>
               <br/>
              <br/>
+           <input type="hidden" name="rgID" value="<?php echo $_GET["ID"]?>"> <br>
            <select name="Serves" >
              <option value="0">Non</option>
                     <?php 

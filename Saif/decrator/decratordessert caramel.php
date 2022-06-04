@@ -7,10 +7,10 @@ else
 {
     include_once("../addition.php");
 }
-Class dessertcaramel implements decorator
+Class dessertcaramel extends add
 {
     public function TotalCost($Cost){
-        return $this->Obj->TotalCost()+ $Cost;
+        return $this->Obj->TotalCost(0)+ $Cost;
     }
 }
 ?>

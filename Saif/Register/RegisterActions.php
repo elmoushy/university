@@ -80,12 +80,19 @@ if(isset($_POST["Results"]))
 }
 if(isset($_POST["services"]))
 { 
-    $Rg = new Register();
-    $Rg->setID($_POST["ID"]);
-    $Rg->setStID($_POST["StID"]);
-    $Rg->setDate($_POST["Date"]);
-    //$Rg->getTotalHr($_POST["TotalHr"]);
-    //$Rg->getTotalPriceHr($_POST["TotalPriceHr"]);
-    echo(" <script> location.replace('AddService.php?ID=".$_POST["ID"]."'); </script>");
+    if($_POST["ID"] > 0)
+    {
+        $Rg = new Register();
+        $Rg->setID($_POST["ID"]);
+        $Rg->setStID($_POST["StID"]);
+        $Rg->setDate($_POST["Date"]);
+        //$Rg->getTotalHr($_POST["TotalHr"]);
+        //$Rg->getTotalPriceHr($_POST["TotalPriceHr"]);
+        echo(" <script> location.replace('AddService.php?ID=".$_POST["ID"]."'); </script>");
+    }else
+    {
+        echo(" <script> location.replace('Register.html'); </script>");
+    }
+    
 }
 ?>

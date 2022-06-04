@@ -57,6 +57,11 @@ class Register extends InID implements File
                     $ar[2] = $this->Date;
                 }
 
+                if($this->totalPriceHr != 0)
+                {
+                    $ar[4] = $this->totalPriceHr;
+                }
+
 
                 $nL ="";
                 for($j=0;$j< count($ar); $j++)
