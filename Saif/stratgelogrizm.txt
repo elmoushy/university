@@ -18,8 +18,12 @@ if(isset($_POST['submit']))
         if($Array[0]==$no)
         {
             $way=$Array[1];
+            $w=explode(" ",$way);
             $line.=$File->getSeparator();
-            $line.=$Array[1];
+            for ($i=0; $i < count($w);$i++)
+            {
+                $line.=$w[$i];
+            }
             $line.=$File->getSeparator();
             $way =new $way();
             $stratge->setpay($way);

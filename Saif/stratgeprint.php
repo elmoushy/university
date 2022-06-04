@@ -3,7 +3,6 @@ include_once('stratge/Visa.php');
 include_once('stratge/Cash.php');
 include_once('stratge/Fawry.php');
 include_once('stratge/Paybal.php');
-
 include_once("stratge/stratgeclass.php");
 include_once "functions.php";
 session_start();
@@ -24,8 +23,12 @@ if(isset($_POST['submit']))
         if($Array[0]==$no)
         {
             $way=$Array[1];
+            $w=explode(" ",$way);
             $line.=$File->getSeparator();
-            $line.=$Array[1];
+            for ($i=0; $i < count($w);$i++)
+            {
+                $line.=$w[$i];
+            }
             $line.=$File->getSeparator();
             $way =new $way();
             $stratge->setpay($way);
@@ -33,6 +36,5 @@ if(isset($_POST['submit']))
             break;
         } 
     }
-
 }
 ?>

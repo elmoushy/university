@@ -2,3 +2,4 @@
 2~Cash~include_once('stratge/Cash.php');~
 3~Fawry~include_once('stratge/Fawry.php');~
 4~Paybal~include_once('stratge/Paybal.php');~
+5~Visa amrecan~include_once('stratge/Visa amrecan.php');~
