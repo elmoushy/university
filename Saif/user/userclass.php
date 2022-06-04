@@ -102,10 +102,6 @@ class Admissions extends user
         $record=$id.$s.$this->getUserid_type().$s.$this->getName().$s.$this->getPassword().$s.$this->getPhone_number().$s.$this->getDate_of_birthday().$s.$this->getFaculity_id().$s.$email.$s;
         $this->FileObj->store_dataFile($record);
     }
-    public function Trancaction()
-    {
-        if(isset($this->Pay)) $this->Pay->Pay(10);
-    }
     public function update()
     {
         $records = $this->FileObj->AllContents();

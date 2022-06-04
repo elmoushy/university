@@ -1,0 +1,1 @@
+1~Visa~include_once(stratge/Visa.php)~

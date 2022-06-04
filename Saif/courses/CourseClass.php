@@ -32,7 +32,6 @@ class Course extends InID implements File
     public function Update()
     {
         $records = $this->FileObj->AllContents();
-        $pos = 0;
         for($i=0;$i<count($records);$i++)
         {
             $ar = explode($this->FileObj->getSeparator(),$records[$i]);

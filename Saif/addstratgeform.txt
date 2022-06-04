@@ -7,9 +7,10 @@ else
 {
     include_once("../Interface.php");
 }
-class Cash implements Pay{
+class ~Fawry~ implements Pay
+{
     public function Pay(int $Amount) {
-        echo "Pay to Cash";
+        echo "Pay with Fawry";
     }
 }
 ?>
