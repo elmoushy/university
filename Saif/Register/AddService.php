@@ -29,37 +29,23 @@
         <br/>
         <br/>
         <h1 style="color:rgb(233, 242, 240);"align="RIGHT"> <pre> Helwan University  </pre></h1>
-        
           <br/>
           <br/>
           <br/>
           <br/>
           <br/>
-<<<<<<< HEAD
           <br/>
           <br/>
           <br/>
           <br/>
           <br/>
-          <div class="login-form" align="center">
-            <form action="AddServiceAction.php" method="post">
+          <div class="login-form" align="center" style="color:white">
+          <form action="AddServiceAction.php" method="post" style="color:white">
                 <div style="color:white">
                 <h1>Additional Services</h1>
                 </div>
-              <br/>
              <br/>
-           <input type="hidden" name="rgID" value="<?php echo $_GET["ID"]?>"> <br>
-           <select name="Serves" >
-             <option value="0">Non</option>
-=======
-          <div class="login-form" align="center" style="color:rgb(233, 242, 240)">
-            <form action="Course.php" method="post">
-                <div style="color:white">
-                <h1>Additional Services</h1>
-                </div>
-           <selectstyle="color:rgb(233, 242, 240); >
-             <option style="color:rgb(233, 242, 240); value="0"></option>
->>>>>>> 05531a6cdd6936836ab7eb17333950b0fb6869a6
+             <br/>
                     <?php 
                         include_once "../functions.php";
                         $File = new filemanager();
@@ -72,8 +58,8 @@
                             echo "$Name <input type='checkbox' name='$Name' value='$Id'> <br>";
                         }
                     ?>
-            </select>
             <br>
                 <input type="submit" value="Subscribe" name = "Store">
             </form>
           </div>
+          
