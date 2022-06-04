@@ -27,7 +27,7 @@ echo "Total Hour Price: ".$Res->getTotalPriceHr()."</br>";
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 <body>
-<form method="post">
+<form action="stratgeprint.php" method="post">
 <select name="stratge" >
                     <option value="0">Non</option>
                     <?php 
@@ -42,23 +42,8 @@ echo "Total Hour Price: ".$Res->getTotalPriceHr()."</br>";
                             echo "<option value='$Id'>$Name</option>";
                         }
                     ?>
+                    <input type="submit" value="submit" name = "submit">
 </select>
 </form>
 </body>
 </html>
-<?php
-/*
-include_once("stratge/Visa.php");
-include_once("stratge/Cash.php");
-include_once("stratge/Fawry.php");
-if(isset($_POST['submit']))
-{
-    extract($_POST);
-    $stratge = new stratge();
-    //if($Name == "Cash") $User->setPay(new Cash());
-    //if($Name == "visa") $User->setPay(new visa());
-    //if($Name == "Fawry") $User->setPay(new Fawry());
-    $stratge->Trancaction();
-}
-*/
-?>

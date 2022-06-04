@@ -63,7 +63,7 @@ class stratge extends InID implements File
     {
         $s=$this->FileObj->getSeparator();
         $id=$this->FileObj->getId()+1;
-        $record=$id.$s.$this->getName().$s."include_once("."stratge"."/".$this->getName().".php".")".$s;
+        $record=$id.$s.$this->getName().$s."include_once("."'"."stratge"."/".$this->getName().".php"."'".")".$s;
         $this->FileObj->store_dataFile($record);
         $this->interphp();
     }

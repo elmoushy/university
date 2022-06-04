@@ -1,1 +1,2 @@
-1~Visa~include_once(stratge/Visa.php)~
+1~Visa~include_once('stratge/Visa.php')~
+2~fundmental~include_once('stratge/fundmental.php')~
