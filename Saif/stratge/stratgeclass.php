@@ -24,6 +24,9 @@ class stratge extends InID implements File
         $this->File = new filemanager();
         $this->File->setFilenames("addstratgeform");
         $this->File->setSeparator("~");
+        $this->F = new filemanager();
+        $this->F->spsetname("../stratgelogrizm");
+        $this->F->setSeparator("~");
     }
     public function interphp()
     {
@@ -63,7 +66,6 @@ class stratge extends InID implements File
     public function addphp()
     {
         $records = $this->FileObj->AllContents();
-        $newRecords = array();
         $line="<?php"."\r\n";
         $this->FileObj->new_php_file("../","stratgeprint",$line);
         for($i=0;$i<count($records);$i++)
@@ -71,6 +73,13 @@ class stratge extends InID implements File
             $ar = explode($this->File->getSeparator(),$records[$i]);
             $line=$ar[2];
             $this->FileObj->new_php_file("../","stratgeprint",$line."\r\n");
+        }
+        $records = $this->F->AllContents();
+        $this->F->new_php_file("../","stratgeprint",$line);
+        for($i=0;$i<count($records);$i++)
+        {
+            $line=$records[$i];
+            $this->FileObj->new_php_file("../","stratgeprint",$line);
         }
     }
     public function Store()

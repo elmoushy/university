@@ -1,5 +1,3 @@
-<?php
-include_once("stratge/Visa.php");
 include_once("stratge/stratgeclass.php");
 include_once "functions.php";
 session_start();
