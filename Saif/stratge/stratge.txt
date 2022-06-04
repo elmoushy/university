@@ -1,2 +1,9 @@
 1~Visa~include_once('stratge/Visa.php')~
-2~fundmental~include_once('stratge/fundmental.php')~
+2~Cash~include_once('stratge/Cash.php')~
+3~Cash~include_once('stratge/Cash.php')~
+4~Cash~include_once('stratge/Cash.php')~
+5~doctor~include_once('stratge/doctor.php')~
+6~moka~include_once('stratge/moka.php')~
+7~moka~include_once('stratge/moka.php')~
+8~bus~include_once('stratge/bus.php')~
+9~aaa~include_once('stratge/aaa.php')~

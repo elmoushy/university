@@ -141,6 +141,10 @@ public function GetFileName()
             return $this->Filenames;
         }
     }
+    public function spsetname($filemanes)
+    {
+        $this->Filenames = $filemanes.".txt";
+    }
     public function setFilenames($Filenames)
     {
         if($Filenames!="")
@@ -148,10 +152,12 @@ public function GetFileName()
             if(file_exists($Filenames."txt"))
             {
                 $this->Filenames = $Filenames."txt";
-            }else if(file_exists("../".$Filenames."/".$Filenames.".txt"))
+            }
+            else if(file_exists("../".$Filenames."/".$Filenames.".txt"))
             {
                 $this->Filenames = "../".$Filenames."/".$Filenames.".txt";
-            }else if(file_exists($Filenames."/".$Filenames.".txt"))
+            }
+            else if(file_exists($Filenames."/".$Filenames.".txt"))
             {
                 $this->Filenames = $Filenames."/".$Filenames.".txt";
             }

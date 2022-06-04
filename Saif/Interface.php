@@ -9,8 +9,9 @@ interface File{
     public function Remove();
     public function Search();
 }
-interface Pay{
-    public function Pay();
+abstract class Pay{
+    protected $FileObj;
+    public abstract function Pay($l);
 } 
 interface decorator {
     public function TotalCost(float $Cost);

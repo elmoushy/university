@@ -15,6 +15,7 @@ class stratge extends InID implements File
 {
     private $FileObj;
     private $File;
+    protected $pay;
     public function __construct()
     {
         $this->FileObj = new filemanager();
@@ -34,7 +35,7 @@ class stratge extends InID implements File
         for($i=0;$i<count($records);$i++)
         {
             $ar = explode($this->File->getSeparator(),$records[$i]);
-            if($i== 9)
+            if($i== 11)
             {
                 $str=explode(" ",$this->getName());
                 for($j=0;$j< count($str);$j++)
@@ -48,24 +49,39 @@ class stratge extends InID implements File
                         $line_str.=$str[$j];
                     }
                 }
-                $line="Class"." ".$line_str." "."implements Pay";
+                $line="Class"." ".$line_str." "."extends Pay";
                 $newRecords[$i]=$line;
-                $this->File->new_php_file("decrator","$Nameofclass",$newRecords[$i]);
+                $this->File->new_php_file("","$Nameofclass",$newRecords[$i]);
             }
             else
             {
                 $newRecords[$i]=$records[$i];
-                $this->File->new_php_file("decrator","$Nameofclass",$newRecords[$i]);
+                $this->File->new_php_file("","$Nameofclass",$newRecords[$i]);
             }
+        }
+    }
+    public function addphp()
+    {
+        $records = $this->FileObj->AllContents();
+        $newRecords = array();
+        $line="<?php"."\r\n";
+        $this->FileObj->new_php_file("../","stratgeprint",$line);
+        for($i=0;$i<count($records);$i++)
+        {
+            $ar = explode($this->File->getSeparator(),$records[$i]);
+            $line=$ar[2];
+            $this->FileObj->new_php_file("../","stratgeprint",$line."\r\n");
         }
     }
     public function Store()
     {
         $s=$this->FileObj->getSeparator();
         $id=$this->FileObj->getId()+1;
-        $record=$id.$s.$this->getName().$s."include_once("."'"."stratge"."/".$this->getName().".php"."'".")".$s;
+        $record=$id.$s.$this->getName().$s."include_once("."'"."stratge"."/".$this->getName().".php"."'".")".";".$s;
         $this->FileObj->store_dataFile($record);
         $this->interphp();
+        unlink("../"."stratgeprint.php");
+        $this->addphp();
     }
     public function Update()
     {
@@ -94,9 +110,9 @@ class stratge extends InID implements File
         }
 
     }
-    public function Trancaction()
+    public function Trancaction($string)
     {
-        if(isset($this->Pay)) $this->Pay->Pay(10);
+        if(isset($this->pay)) $this->pay->Pay($string);
     }
     public function Remove()
     {
@@ -112,7 +128,7 @@ class stratge extends InID implements File
                break;
             }
         }
-        unlink('decrator'.$pos.'.php');
+        unlink(''.$pos.'.php');
     }
 
     public function Search()
@@ -148,5 +164,24 @@ class stratge extends InID implements File
         return $DisplayedList;
     }
 
+
+    /**
+     * Get the value of pay
+     */ 
+    public function getPay()
+    {
+        return $this->pay;
+    }
+
+    /**
+     * Set the value of pay
+     *
+     * @return  self
+     */ 
+    public function setPay($pay)
+    {
+        $this->pay = $pay;
+        return $this;
+    }
 }
 ?>

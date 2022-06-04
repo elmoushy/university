@@ -9,8 +9,7 @@ else
     include_once("../Interface.php");
     include_once("../functions.php");
 }
-Class Visa extends Pay
-{
+Class Visa extends Pay{
     function __construct()
     {
         $this->FileObj = new filemanager();

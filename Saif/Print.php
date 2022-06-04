@@ -1,15 +1,17 @@
 <?php
 //error_reporting (E_ERROR | E_PARSE);
+session_start();
 include_once("Register/Register.php");
 include_once("user/userclass.php");
 include_once("RegisterDetails/RegisterDetails.php");
 $Rg = new Register();
 $Res = new Register();
 $Res = $Rg->getOneRegister($_GET["ID"]);
+$_SESSION["OrderId"] = $_GET["ID"];
+$iddd=$Rg->getOneRegister($_GET["ID"]);
 echo "Register ID: ".$Res->getID()."</br>";
 echo "Student ID: ".$Res->getStID()."</br>";
 echo "Date: ".$Res->getDate()."</br>";
-
 $Rd = new RegisterDetails();
 $Rd->setID("");
 $Rd->setRgID($_GET["ID"]);
@@ -28,7 +30,7 @@ echo "Total Hour Price: ".$Res->getTotalPriceHr()."</br>";
 </head>
 <body>
 <form action="stratgeprint.php" method="post">
-<select name="stratge" >
+<select name="no" >
                     <option value="0">Non</option>
                     <?php 
                         include_once "functions.php";
@@ -43,6 +45,7 @@ echo "Total Hour Price: ".$Res->getTotalPriceHr()."</br>";
                         }
                     ?>
                     <input type="submit" value="submit" name = "submit">
+                    
 </select>
 </form>
 </body>
