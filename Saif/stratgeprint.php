@@ -1,10 +1,12 @@
 <?php
-include_once('stratge/Visa.php');
-include_once('stratge/Cash.php');
-include_once('stratge/Fawry.php');
-include_once('stratge/Paybal.php');
+error_reporting (E_ERROR | E_PARSE);
+include_once('stratge/visa.php');
+include_once('stratge/vodafone cash.php');
+include_once('stratge/Fawery.php');
+
 include_once("stratge/stratgeclass.php");
 include_once "functions.php";
+include_once("Interface.php");
 session_start();
 extract($_POST);
 if(isset($_POST['submit']))
@@ -16,6 +18,7 @@ if(isset($_POST['submit']))
     $File->setSeparator("~");
     $s=$File->getSeparator();
     $List = $File->AllContents();
+    $l="";
     $stratge = new stratge();
     for ($i=0; $i < count($List)  - 1; $i++)
     { 
@@ -28,13 +31,19 @@ if(isset($_POST['submit']))
             for ($i=0; $i < count($w);$i++)
             {
                 $line.=$w[$i];
+                $l.=$w[$i];
             }
             $line.=$File->getSeparator();
+            $way=$l;
             $way =new $way();
             $stratge->setpay($way);
             $stratge->Trancaction($line);
             break;
         } 
     }
+    $sub = new Subject();
+    new NewRegister($sub);
+    $sub->notifyAllObserv("");
+    echo(" <script> location.replace('Register/Register.html'); </script>");
 }
 ?>

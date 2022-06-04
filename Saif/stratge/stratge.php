@@ -8,14 +8,6 @@ if(isset($_POST["Store"]))
     $dec->Store();
     echo(" <script> location.replace('stratge.html'); </script>");
 }
-if(isset($_POST["Update"]))
-{
-    $dec = new stratge();
-    $dec->setId($Id);
-    $dec->setName($Name);
-    $dec->Update();
-    echo(" <script> location.replace('stratge.html'); </script>");
-}
 if(isset($_POST["Search"]))
 {
     $dec = new stratge();

@@ -78,5 +78,14 @@ if(isset($_POST["Results"]))
     //$Rg->getTotalPriceHr($_POST["TotalPriceHr"]);
     echo(" <script> location.replace('../Print.php?ID=".$_POST["ID"]."'); </script>");
 }
-
+if(isset($_POST["services"]))
+{ 
+    $Rg = new Register();
+    $Rg->setID($_POST["ID"]);
+    $Rg->setStID($_POST["StID"]);
+    $Rg->setDate($_POST["Date"]);
+    //$Rg->getTotalHr($_POST["TotalHr"]);
+    //$Rg->getTotalPriceHr($_POST["TotalPriceHr"]);
+    echo(" <script> location.replace('AddService.php?ID=".$_POST["ID"]."'); </script>");
+}
 ?>

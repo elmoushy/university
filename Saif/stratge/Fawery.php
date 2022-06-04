@@ -9,7 +9,7 @@ else
     include_once("../Interface.php");
     include_once("../functions.php");
 }
-Class Paybal extends Pay{
+Class Fawery extends Pay{
     function __construct()
     {
         $this->FileObj = new filemanager();

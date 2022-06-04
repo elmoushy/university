@@ -1,5 +1,1 @@
-1~Visa~include_once('stratge/Visa.php');~
-2~Cash~include_once('stratge/Cash.php');~
-3~Fawry~include_once('stratge/Fawry.php');~
-4~Paybal~include_once('stratge/Paybal.php');~
-5~Visa amrecan~include_once('stratge/Visa amrecan.php');~
+3~Fawery~include_once('stratge/Fawery.php');~

@@ -94,30 +94,7 @@ class stratge extends InID implements File
     }
     public function Update()
     {
-        $records = $this->FileObj->AllContents();
-        for($i=0;$i<count($records);$i++)
-        {
-            $ar = explode($this->FileObj->getSeparator(),$records[$i]);
-            if($this->ID == $ar[0])
-            {
-                    $nl="";
-                    if($this->name!="")
-                    {
-                        unlink('decrator'.$ar[1].'.php');
-                        $ar[1]=$this->getName();
-                        $this->interphp();
-                    }
-                    for($j=0; $j<count($ar)-1;$j++)
-                    {
-                        $nl.=$ar[$j];
-                        $nl.=$this->FileObj->getSeparator();
-                    } 
-                    $nl.="\r\n";
-               $this->FileObj->update_dataFile($records[$i],$nl);
-                break;
-            }
-        }
-
+        
     }
     public function Trancaction($string)
     {
@@ -137,7 +114,7 @@ class stratge extends InID implements File
                break;
             }
         }
-        unlink(''.$pos.'.php');
+        unlink($pos.'.php');
     }
 
     public function Search()
@@ -164,15 +141,15 @@ class stratge extends InID implements File
             }
         }
         $DisplayedList = [];
-        $Header = ["Id","Name","price"];
+        $Header = ["Id","Name"];
         array_push($DisplayedList,$Header);
         for ($i=0; $i < count($List); $i++) { 
             $Array = explode($this->FileObj->getSeparator(),$List[$i]);
+            array_splice($Array,2,1);
            array_push($DisplayedList,$Array);
         }
         return $DisplayedList;
     }
-
 
     /**
      * Get the value of pay
