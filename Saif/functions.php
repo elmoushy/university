@@ -166,7 +166,7 @@ public function GetFileName()
                 //echo "hello";
                 //exit;
                 $this->Filenames = "../".$Filenames.".txt";
-            }           
+            }
         }
         return $this;
     }
