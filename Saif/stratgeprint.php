@@ -3,7 +3,8 @@ include_once('stratge/Visa.php');
 include_once('stratge/Cash.php');
 include_once('stratge/Fawry.php');
 include_once('stratge/Paybal.php');
-
+//
+include_once("Interface.php");
 include_once("stratge/stratgeclass.php");
 include_once "functions.php";
 session_start();
@@ -34,5 +35,9 @@ if(isset($_POST['submit']))
         } 
     }
 
+    $sub = new Subject();
+    new NewRegister($sub);
+
+    $sub->notifyAllObserv("");
 }
 ?>

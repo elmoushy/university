@@ -1,5 +1,6 @@
 include_once("stratge/stratgeclass.php");
 include_once "functions.php";
+include_once("Interface.php");
 session_start();
 extract($_POST);
 if(isset($_POST['submit']))
@@ -27,5 +28,10 @@ if(isset($_POST['submit']))
             break;
         } 
     }
+
+    $sub = new Subject();
+    new NewRegister($sub);
+
+    $sub->notifyAllObserv("");
 }
 ?>
