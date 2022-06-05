@@ -135,7 +135,7 @@ for($i=0;$i<count($records);$i++)
                     <a href="/GitHub/Court-system/Saif/usertype/Usertype.html"> UserType </a><br>
                 <?php
                 } if($usertypemenu!="null"){?>
-                    <a href="/GitHub/Court-system/Saif/usertypemenu/User Type Menu.php"> usertypemenu </a><br>
+                    <a href="/GitHub/Court-system/Saif/usertypemenu/UserTypeMenu.php"> usertypemenu </a><br>
                 <?php
                 } if($usermenu!="null"){?>
                     <a href="/GitHub/Court-system/Saif/menu/menu.html"> menu </a><br>
