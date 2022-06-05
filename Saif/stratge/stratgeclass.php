@@ -124,7 +124,7 @@ class stratge extends InID implements File
             if($this->ID == $ar[0])
             {
                 $pos=$ar[1];
-               $this->FileObj->remove_dataFile($records[$i]);
+                $this->FileObj->remove_dataFile($records[$i]."\r\n");
                break;
             }
         }

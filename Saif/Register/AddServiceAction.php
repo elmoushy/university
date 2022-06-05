@@ -1,8 +1,5 @@
 <?php
-include_once('../decrator/bus.php');
-include_once('../decrator/football.php');
-include_once('../decrator/swimming ppool.php');
-include_once('../decrator/ggg.php');
+include_once('../decrator/bus collage.php');
 
 
 include_once("../decrator/basic expenses.php");

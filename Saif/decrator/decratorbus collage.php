@@ -7,7 +7,7 @@ else
 {
     include_once("../addition.php");
 }
-Class ggg extends add
+Class buscollage extends add
 {
     public function TotalCost($Cost)
     {

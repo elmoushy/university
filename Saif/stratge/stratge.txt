@@ -1,1 +1,0 @@
-3~Fawery~include_once('stratge/Fawery.php');~
