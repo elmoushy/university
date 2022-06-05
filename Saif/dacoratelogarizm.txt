@@ -1,8 +1,3 @@
-<?php
-include_once('../decrator/bus.php');
-include_once('../decrator/football.php');
-
-
 include_once("../decrator/basic expenses.php");
 include_once("../function.php");
 include_once("Register.php");

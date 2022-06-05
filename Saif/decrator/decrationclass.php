@@ -24,6 +24,13 @@ class dec extends InID implements File
         $this->File = new filemanager();
         $this->File->setFilenames("addclassform");
         $this->File->setSeparator("~");
+        $this->F = new filemanager();
+        $this->F->spsetname("../dacoratelogarizm");
+        $this->F->setSeparator("~");
+    }
+    public function check_decrator_name($name)
+    {
+        
     }
     public function interphp()
     {
@@ -60,13 +67,49 @@ class dec extends InID implements File
             }
         }
     }
+    public function addphp()
+    {
+        
+        $records = $this->FileObj->AllContents();
+        $line="<?php"."\r\n";
+        $this->FileObj->new_php_file("../","Register/AddServiceAction",$line);
+        for($i=0;$i<count($records);$i++)
+        {
+            $ar = explode($this->File->getSeparator(),$records[$i]);
+            $line=$ar[3]."\r\n";
+            $this->FileObj->new_php_file("../","Register/AddServiceAction",$line);
+        }
+        $records = $this->F->AllContents();
+        $this->F->new_php_file("../","Register/AddServiceAction",$line);
+        for($i=0;$i<count($records);$i++)
+        {
+            $line=$records[$i];
+            $this->FileObj->new_php_file("../","Register/AddServiceAction",$line);
+        }
+    }
     public function Store()
     {
-        $s=$this->FileObj->getSeparator();
-        $id=$this->FileObj->getId()+1;
-        $record=$id.$s.$this->getName().$s.$this->getPrice().$s;
-        $this->FileObj->store_dataFile($record);
-        $this->interphp();
+        $gg=0;
+        $records = $this->FileObj->AllContents();
+        for($i=0;$i<count($records);$i++)
+        {
+            $ar = explode($this->FileObj->getSeparator(),$records[$i]);
+            if($ar[1] == $this->getName())
+            {
+                $gg=1;
+                break;
+            }
+        }
+        if($gg==0)
+        {
+            $s=$this->FileObj->getSeparator();
+            $id=$this->FileObj->getId()+1;
+            $record=$id.$s.$this->getName().$s.$this->getPrice().$s."include_once("."'"."../"."decrator"."/".$this->getName().".php"."'".")".";".$s;
+            $this->FileObj->store_dataFile($record);
+            $this->interphp();
+            unlink("../Register/AddServiceAction.php");
+            $this->addphp();
+        }
     }
     public function Update()
     {
@@ -152,6 +195,7 @@ class dec extends InID implements File
         array_push($DisplayedList,$Header);
         for ($i=0; $i < count($List); $i++) { 
             $Array = explode($this->FileObj->getSeparator(),$List[$i]);
+            array_splice($Array,3,1);
            array_push($DisplayedList,$Array);
         }
         return $DisplayedList;

@@ -1,3 +1,2 @@
-1~School  bus~7000~
-3~dessert caramel~1000~
-4~tok tok~1000~
+1~bus~998~include_once('../decrator/bus.php');~
+2~football~998~include_once('../decrator/football.php');~

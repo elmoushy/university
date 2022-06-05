@@ -7,10 +7,11 @@ else
 {
     include_once("../addition.php");
 }
-Class Schoolbus extends add
+Class football extends add
 {
-    public function TotalCost(){
-        return $this->Obj->TotalCost()+ $this->Cost;
+    public function TotalCost($Cost)
+    {
+        return $this->Obj->TotalCost() + $Cost;
     }
 }
 ?>

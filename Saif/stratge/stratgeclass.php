@@ -84,13 +84,27 @@ class stratge extends InID implements File
     }
     public function Store()
     {
-        $s=$this->FileObj->getSeparator();
-        $id=$this->FileObj->getId()+1;
-        $record=$id.$s.$this->getName().$s."include_once("."'"."stratge"."/".$this->getName().".php"."'".")".";".$s;
-        $this->FileObj->store_dataFile($record);
-        $this->interphp();
-        unlink("../"."stratgeprint.php");
-        $this->addphp();
+        $gg=0;
+        $records = $this->FileObj->AllContents();
+        for($i=0;$i<count($records);$i++)
+        {
+            $ar = explode($this->FileObj->getSeparator(),$records[$i]);
+            if($ar[1] == $this->getName())
+            {
+                $gg=1;
+                break;
+            }
+        }
+        if($gg==0)
+        {
+            $s=$this->FileObj->getSeparator();
+            $id=$this->FileObj->getId()+1;
+            $record=$id.$s.$this->getName().$s."include_once("."'"."stratge"."/".$this->getName().".php"."'".")".";".$s;
+            $this->FileObj->store_dataFile($record);
+            $this->interphp();
+            unlink("../"."stratgeprint.php");
+            $this->addphp();
+        }
     }
     public function Update()
     {
