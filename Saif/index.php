@@ -124,11 +124,12 @@ for($i=0;$i<count($records);$i++)
                 if($order!="null")
                 {
                 
-                   echo("<h1><a href='/GitHub/Court-system/Saif/Register/RegisterH.php?order=".$order."'> Register </a></h1><br><br>") 
+                   echo("<h1><a href='/GitHub/Court-system/Saif/Register/RegisterH.php?order=".$order."'> Register </a></h1><br><br>");
                 ?>
                 <?php
-                } if($product!="null") {?>
-                    <h1><a href="/GitHub/Court-system/Saif/courses/Course.html"> Course </a></h1><br><br>
+                } if($product!="null") {
+                  echo("<h1><a href='/GitHub/Court-system/Saif/courses/CourseH.php?product=".$product."'> Course </a></h1><br><br>");
+                ?>
                 <?php
                 } if($user!="null"){?>
                     <h1><a href="/GitHub/Court-system/Saif/user/User .php"> User </a></h1><br><br>
