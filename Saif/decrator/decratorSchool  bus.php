@@ -7,7 +7,7 @@ else
 {
     include_once("../addition.php");
 }
-Class Schoolbus implements decorator
+Class Schoolbus extends add
 {
     public function TotalCost(){
         return $this->Obj->TotalCost()+ $this->Cost;

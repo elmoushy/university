@@ -7,11 +7,12 @@ else
 {
     include_once("../addition.php");
 }
-Class toktok implements decorator
+Class toktok extends add
 {
-    public function TotalCost($Cost)
+    public function TotalCost()
     {
-        return $this->Obj->TotalCost() + $Cost;
+        //echo $this->Cost."</br>";
+        return $this->Obj->TotalCost() + $this->Cost;
     }
 }
 ?>

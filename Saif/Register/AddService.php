@@ -56,7 +56,7 @@
                             $Array = explode("~",$List[$i]);
                             $Id = $Array[0];
                             $Name = $Array[1];
-                            echo "$Name <input type='checkbox' name='$Name' value='$Id'> <br>";
+                            echo "$Name <input type='checkbox' name='Deco[]' value='$Id'> <br>";
                             //echo "<input type='hidden' name='$Name' value='$Id'> <br>";
                         }
                     ?>

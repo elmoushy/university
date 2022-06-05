@@ -10,7 +10,7 @@ else
 abstract class Add implements decorator {
     public decorator $Obj;
 
-    private $Cost;
+    protected $Cost;
 	function __construct(decorator $Obj) {
         $this->Obj = $Obj;
 	}
@@ -28,7 +28,7 @@ abstract class Add implements decorator {
 
     public function setCost($Cost)
     {
-        if($this->Cost > 0)
+        if($Cost > 0)
         {
             $this->Cost = $Cost;
         }
