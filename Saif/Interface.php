@@ -14,7 +14,8 @@ abstract class Pay{
     public abstract function Pay($l);
 } 
 interface decorator {
-    public function TotalCost(float $Cost);
+    //public function TotalCost(float $Cost);
+    public function TotalCost();
 }
 
 abstract class observer

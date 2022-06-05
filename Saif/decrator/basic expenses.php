@@ -9,8 +9,8 @@ else
 }
 Class Order implements decorator
 {
-    public function TotalCost($Cost){
-        return $Cost;
+    public function TotalCost(){
+        return 0;
     }
 }
 ?>

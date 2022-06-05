@@ -9,8 +9,8 @@ else
 }
 Class dessertcaramel extends add
 {
-    public function TotalCost($Cost){
-        return $this->Obj->TotalCost(0)+ $Cost;
+    public function TotalCost(){
+        return $this->Obj->TotalCost(0)+ $this->Cost;
     }
 }
 ?>

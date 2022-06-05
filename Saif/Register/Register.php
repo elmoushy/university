@@ -72,6 +72,7 @@ class Register extends InID implements File
                         $nL.=$this->FileObj->getSeparator();
                     }
                 }
+                $nL.="\r\n";
 
                 $this->FileObj->update_dataFile($Rec[$i],$nL);
                 break;

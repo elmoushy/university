@@ -9,8 +9,8 @@ else
 }
 Class Schoolbus implements decorator
 {
-    public function TotalCost($Cost){
-        return $this->Obj->TotalCost()+ $Cost;
+    public function TotalCost(){
+        return $this->Obj->TotalCost()+ $this->Cost;
     }
 }
 ?>

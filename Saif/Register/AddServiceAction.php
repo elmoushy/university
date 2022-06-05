@@ -15,13 +15,16 @@ if(isset($_POST["Serves"]))
     $List = $File->AllContents();
     $l="";
     $line ="0";
+    $way = new Order();
     for ($i=0; $i < count($List)  - 1; $i++)
     { 
         $Array = explode("~",$List[$i]);
-        if($Array[0]==$_POST["Serves"])
+        
+        if($Array[0]==$_POST["$Array[1]"])
         {
-            $way=$Array[1];
-            $w=explode(" ",$way);
+
+            $way2=$Array[1];
+            $w=explode(" ",$way2);
             $line.=$File->getSeparator();
             for ($i=0; $i < count($w);$i++)
             {
@@ -29,20 +32,17 @@ if(isset($_POST["Serves"]))
                 $l.=$w[$i];
             }
             $line.=$File->getSeparator();
-            $way = new Order();
+            //$way = new Order();
             //$way=$l;
             $way =new $l($way);
-
-            $reg = new Register();
-            $ref = $reg->getOneRegister($_POST["rgID"]);
-
-            $ref->setTotalPriceHr($ref->getTotalPriceHr() + $way->TotalCost($Array[2]));
-
-            $ref->Update();
-
-            break;
+            $way->setCost($Array[2]);
         } 
     }
+
+    $reg = new Register();
+    $ref = $reg->getOneRegister($_POST["rgID"]);
+    $ref->setTotalPriceHr($ref->getTotalPriceHr() + $way->TotalCost());
+    $ref->Update();
 }
 
 ?>

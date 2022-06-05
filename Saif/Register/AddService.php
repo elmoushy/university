@@ -43,6 +43,7 @@
           <form action="AddServiceAction.php" method="post" style="color:white">
                 <div style="color:white">
                 <h1>Additional Services</h1>
+                <input type="hidden" name="rgID" value="<?php echo $_GET["ID"]?>"> <br>
                 </div>
              <br/>
              <br/>
@@ -56,10 +57,12 @@
                             $Id = $Array[0];
                             $Name = $Array[1];
                             echo "$Name <input type='checkbox' name='$Name' value='$Id'> <br>";
+                            //echo "<input type='hidden' name='$Name' value='$Id'> <br>";
                         }
                     ?>
+                    
             <br>
-                <input type="submit" value="Subscribe" name = "Store">
+                <input type="submit" value="Subscribe" name = "Serves">
             </form>
           </div>
           
