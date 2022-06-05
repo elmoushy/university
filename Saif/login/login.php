@@ -3,8 +3,7 @@ session_start();
 include_once("../functions.php");
 include_once("loginclass.php");
 extract($_POST);
-if(isset($_POST["login"]))
-{
+
     $obj=new login();
     $obj->setLogin($username);
     $obj->setPassword($password);
@@ -18,6 +17,5 @@ if(isset($_POST["login"]))
         echo "Wrong information";
         exit;
     }
-    
-}
+
 ?>

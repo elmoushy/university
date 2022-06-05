@@ -9,7 +9,7 @@ class login
 
     function __construct(){
         $this->FileObj=new filemanager();
-        $this->FileObj->setFilenames("../user/user");
+        $this->FileObj->setFilenames("user/user");
         $this->FileObj->setSeparator("~");
     }
 
