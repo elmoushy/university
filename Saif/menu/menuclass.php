@@ -12,6 +12,7 @@ class menu extends user implements File
     private $user_type_menu="";
     private $user_menu="";
     private $decorator="";
+    private $stratge="";
     function __construct(){
         $this->FileObj=new filemanager();
         $this->FileObj->setFilenames("menu");
@@ -46,7 +47,7 @@ class menu extends user implements File
             }
         }
         $DisplayedList = [];
-        $Header = ["Id","name","ordermenu","productmenu","usermenu"];
+        $Header = ["Id","name","ordermenu","productmenu","usermenu","decorator","stratge"];
         array_push($DisplayedList,$Header);
         for ($i=0; $i < count($List) - 1; $i++) { 
             $Array = explode($this->FileObj->getSeparator(),$List[$i]);
@@ -58,7 +59,7 @@ class menu extends user implements File
     {
         $s=$this->FileObj->getSeparator();
         $id=$this->FileObj->getId($s)+1;
-        $record=$id.$s.$this->getName().$s.$this->getOrder_m().$s.$this->getProduct_m().$s.$this->getUser_m().$s.$this->getUser_type().$s.$this->getUser_type_menu().$s.$this->getUser_menu().$s.$this->getDecorator().$s;
+        $record=$id.$s.$this->getName().$s.$this->getOrder_m().$s.$this->getProduct_m().$s.$this->getUser_m().$s.$this->getUser_type().$s.$this->getUser_type_menu().$s.$this->getUser_menu().$s.$this->getDecorator().$s.$this->getStratge().$s;
         $this->FileObj->store_dataFile($record);
     }
     public function Update()
@@ -102,6 +103,10 @@ class menu extends user implements File
                 if($this->decorator!="")
                 {
                     $ar[8]=$this->getDecorator();
+                }
+                if($this->stratge!="")
+                {
+                    $ar[8]=$this->getStratge();
                 }
                 for($j = 0; $j < count($ar) - 1;$j++)
                 {
@@ -271,6 +276,26 @@ class menu extends user implements File
 
             
         }
+        return $this;
+    }
+
+    /**
+     * Get the value of stratge
+     */ 
+    public function getStratge()
+    {
+        return $this->stratge;
+    }
+
+    /**
+     * Set the value of stratge
+     *
+     * @return  self
+     */ 
+    public function setStratge($stratge)
+    {
+        $this->stratge = $stratge;
+
         return $this;
     }
 }

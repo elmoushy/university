@@ -1,4 +1,5 @@
 <?php
+error_reporting (E_ERROR | E_PARSE);
 session_start();
 include_once("functions.php");
 if(!isset($_SESSION["id"]))
@@ -123,22 +124,22 @@ for($i=0;$i<count($records);$i++)
                 if($order!="null")
                 {
                 ?>
-                    <a href="/GitHub/Court-system/Saif/Register/Register.html"> Register </a><br>
+                    <h1><a href="/GitHub/Court-system/Saif/Register/Register.html"> Register </a></h1><br><br>
                 <?php
                 } if($product!="null") {?>
-                    <a href="/GitHub/Court-system/Saif/courses/Course.html"> Course </a><br>
+                    <h1><a href="/GitHub/Court-system/Saif/courses/Course.html"> Course </a></h1><br><br>
                 <?php
                 } if($user!="null"){?>
-                    <a href="/GitHub/Court-system/Saif/user/User .php"> User </a><br>
+                    <h1><a href="/GitHub/Court-system/Saif/user/User .php"> User </a></h1><br><br>
                 <?php
                 } if($usertype!="null"){?>
-                    <a href="/GitHub/Court-system/Saif/usertype/Usertype.html"> UserType </a><br>
+                    <h1><a href="/GitHub/Court-system/Saif/usertype/Usertype.html"> UserType </a></h1><br><br>
                 <?php
                 } if($usertypemenu!="null"){?>
-                    <a href="/GitHub/Court-system/Saif/usertypemenu/UserTypeMenu.php"> usertypemenu </a><br>
+                   <h1> <a href="/GitHub/Court-system/Saif/usertypemenu/UserTypeMenu.php"> usertypemenu </a></h1><br><br>
                 <?php
                 } if($usermenu!="null"){?>
-                    <a href="/GitHub/Court-system/Saif/menu/menu.html"> menu </a><br>
+                    <h1><a href="/GitHub/Court-system/Saif/menu/menu.html"> menu </a></h1><br>
                 <?php
                 }
                 ?>
