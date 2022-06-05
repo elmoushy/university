@@ -28,10 +28,7 @@ class dec extends InID implements File
         $this->F->spsetname("../dacoratelogarizm");
         $this->F->setSeparator("~");
     }
-    public function check_decrator_name($name)
-    {
-        
-    }
+
     public function interphp()
     {
         $records = $this->File->AllContents();
@@ -113,34 +110,52 @@ class dec extends InID implements File
     }
     public function Update()
     {
+        $gg=0;
         $records = $this->FileObj->AllContents();
         for($i=0;$i<count($records);$i++)
         {
             $ar = explode($this->FileObj->getSeparator(),$records[$i]);
-            if($this->ID == $ar[0])
+            if($ar[1] == $this->getName()&&$ar[0]!=$this->getID())
             {
-                    $nl="";
-                    if($this->name!="")
-                    {
-                        unlink('decrator'.$ar[1].'.php');
-                        $ar[1]=$this->getName();
-                        $this->interphp();
-                    }
-                    if($this->price!=-1)
-                    {
-                        $ar[2]=$this->getPrice();
-                    }
-                    for($j=0; $j<count($ar)-1;$j++)
-                    {
-                        $nl.=$ar[$j];
-                        $nl.=$this->FileObj->getSeparator();
-                    } 
-                    $nl.="\r\n";
-               $this->FileObj->update_dataFile($records[$i],$nl);
+                $gg=1;
                 break;
             }
         }
-
+        if($gg == 0)
+        {
+            $records = $this->FileObj->AllContents();
+            $s=$this->FileObj->getSeparator();
+            for($i=0;$i<count($records);$i++)
+            {
+                $ar = explode($this->FileObj->getSeparator(),$records[$i]);
+                if($this->ID == $ar[0])
+                {
+                        $nl="";
+                        if($this->name!="")
+                        {
+                            unlink('decrator'.$ar[1].'.php');
+                            unlink("../Register/AddServiceAction.php");
+                            $ar[1]=$this->getName();
+                            $ar[3]="include_once("."'"."../"."decrator"."/".$this->getName().".php"."'".")".";".$s;
+                            $this->interphp();
+                        }
+                        if($this->price!=-1)
+                        {
+                            $ar[2]=$this->getPrice();
+                        }
+                        for($j=0; $j<count($ar)-1;$j++)
+                        {
+                            $nl.=$ar[$j];
+                            $nl.=$this->FileObj->getSeparator();
+                        } 
+                        $nl.="\r\n";
+                        $this->FileObj->update_dataFile($records[$i],$nl);
+                        $this->addphp();
+                        break;
+                }
+            }
+        }
+        
     }
     public function Remove()
     {
