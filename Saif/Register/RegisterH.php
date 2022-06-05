@@ -47,14 +47,15 @@
               <br/>
              <br/>
               <div class="content">
+                <input type="hidden" name="order" value="<?php echo $_GET["order"]?>"> <br>
                 <input type="number" name="ID" placeholder=" Register Id" > <br><br>
                 <input type="number" name="StID" placeholder=" Student Id"> <br><br>
                  <input type="text" name="Date" placeholder=" Date"> <br><br>
-                <input type="submit" value="Store" name = "Store">
-                <input type="submit" value="Add services" name = "services">
-                <input type="submit" value="Update" name = "Update">
+                 <?php if($_GET["order"] == "add" || $_GET["order"] == "all") echo "<input type='submit' value='Store' name = 'Store'>"?>
+                 <?php if($_GET["order"] == "add" || $_GET["order"] == "all") echo "<input type='submit' value='Add services' name = 'services'>"?>
+                 <?php if($_GET["order"] == "all") echo "<input type='submit' value='Update' name = 'Update'>"?>
                 <input type="submit" value="Search"  name = "Search">
-                <input type="submit" value="Delete" name = "Delete">
+                <?php if($_GET["order"] == "all") echo "<input type='submit' value='Delete' name = 'Delete'>"?>
                 <input type="submit" value="Results" name = "Results">
               </div>
             </form>

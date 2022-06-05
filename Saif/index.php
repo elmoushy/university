@@ -123,8 +123,9 @@ for($i=0;$i<count($records);$i++)
                 <?php
                 if($order!="null")
                 {
+                
+                   echo("<h1><a href='/GitHub/Court-system/Saif/Register/RegisterH.php?order=".$order."'> Register </a></h1><br><br>") 
                 ?>
-                    <h1><a href="/GitHub/Court-system/Saif/Register/Register.html"> Register </a></h1><br><br>
                 <?php
                 } if($product!="null") {?>
                     <h1><a href="/GitHub/Court-system/Saif/courses/Course.html"> Course </a></h1><br><br>

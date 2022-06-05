@@ -32,7 +32,7 @@ if(isset($_POST["Update"]))
         echo(" <script> location.replace('../RegisterDetails/RegisterDetailsH.php?ID=".$Rg->getID()."'); </script>");
     }else
     {
-        echo(" <script> location.replace('Register.html'); </script>");
+        echo(" <script> location.replace('RegisterH.php?order=".$_POST["order"]."'); </script>");
     }
 
 
@@ -49,7 +49,7 @@ if(isset($_POST["Search"]))
     //$Rg->getTotalPriceHr($_POST["TotalPriceHr"]);
     $List = $Rg->Search();
     DisplayTable($List);
-    echo "<br><a href='Register.html'>Return To Menu</a> ";
+    echo "<br><a href='RegisterH.php?order=".$_POST["order"]."'>Return To Menu</a> ";
         
 }
 if(isset($_POST["Delete"]))
@@ -65,7 +65,7 @@ if(isset($_POST["Delete"]))
         //$Rg->getTotalPriceHr($_POST["TotalPriceHr"]);
         $Rg->Remove();
     }
-    echo(" <script> location.replace('Register.html'); </script>");
+    echo(" <script> location.replace('RegisterH.php?order=".$_POST["order"]."'); </script>");
 
 }
 if(isset($_POST["Results"]))
@@ -91,7 +91,7 @@ if(isset($_POST["services"]))
         echo(" <script> location.replace('AddService.php?ID=".$_POST["ID"]."'); </script>");
     }else
     {
-        echo(" <script> location.replace('Register.html'); </script>");
+        echo(" <script> location.replace('RegisterH.php?order=".$_POST["order"]."'); </script>");
     }
     
 }

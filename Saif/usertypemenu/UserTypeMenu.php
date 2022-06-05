@@ -38,7 +38,7 @@
           <br/>
           <br/>
           <div class="login-form" align="center">
-          <form action="user.php" method="POST">
+          <form action="User Type Menu.php" method="POST">
                 <div style="color:white">
                 <?php 
                 include_once "../functions.php";
