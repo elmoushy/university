@@ -7,7 +7,7 @@ if(isset($_POST["Add"]))
     if($_POST["MenuId"] == 0) die("Menu Name is required");
     $UserTypeMenu = new UserTypeMenu(0,intval($_POST["TypeId"]),intval($_POST["MenuId"]));
     $UserTypeMenu->Store();
-        echo(" <script> location.replace('UserTypeMenu.php?usertypemenu=".$_POST["usertypemenu"]."'); </script>");
+    echo(" <script> location.replace('UserTypeMenu.php?usertypemenu=".$_POST["usertypemenu"]."'); </script>");
 
 }
 if(isset($_POST["Update"]))

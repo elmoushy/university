@@ -14,10 +14,13 @@ class Usertype extends InID
     }
     public function Store()
     {
-        $this->ID = $this->FileObj->getId() + 1;
-        $s = $this->FileObj->getSeparator();
-        $record = $this->ID.$s.$this->name.$s;
-        $this->FileObj->store_dataFile($record);
+        if($this->getName()!="")
+        {
+            $this->ID = $this->FileObj->getId() + 1;
+            $s = $this->FileObj->getSeparator();
+            $record = $this->ID.$s.$this->name.$s;
+            $this->FileObj->store_dataFile($record);
+        }
     }
     public function Update()
     {
