@@ -94,18 +94,21 @@ class Admissions extends user
     public function Store()
     {
         //id[0]~usertype_id[1]~name[2]~password[3]~phonenumber[4]~date[5]~faculity_id[6]~email[7]~
-        $s=$this->FileObj->getSeparator();
-        $id=$this->FileObj->getId($s)+1;
-        $email=$this->getName().$id."@hel.eg";
-
-
-        $this->setEmail($email);
-        $this->setID($id);
-
-        $pass="hel".$this->getPhone_number();
-        $this->setpassword($pass);
-        $record=$id.$s.$this->getUserid_type().$s.$this->getName().$s.$this->getPassword().$s.$this->getPhone_number().$s.$this->getDate_of_birthday().$s.$this->getFaculity_id().$s.$email.$s;
-        $this->FileObj->store_dataFile($record);
+        if($this->getName()!=""&&$this->getPhone_number()!=""&&$this->getPhone_number()!=""&&$this->getFaculity_id()!=0&&$this->getUserid_type()!=0)
+        {
+            $s=$this->FileObj->getSeparator();
+            $id=$this->FileObj->getId($s)+1;
+            $email=$this->getName().$id."@hel.eg";
+    
+    
+            $this->setEmail($email);
+            $this->setID($id);
+    
+            $pass="hel".$this->getPhone_number();
+            $this->setpassword($pass);
+            $record=$id.$s.$this->getUserid_type().$s.$this->getName().$s.$this->getPassword().$s.$this->getPhone_number().$s.$this->getDate_of_birthday().$s.$this->getFaculity_id().$s.$email.$s;
+            $this->FileObj->store_dataFile($record);
+        }
     }
     public function update()
     {

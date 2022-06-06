@@ -50,7 +50,20 @@
              <br/>
              <input type="number" name="ID" placeholder="Id"> <br>
              <br>
-             <input type="text" name="username" placeholder="Name" > <br>
+             <select name="username" placeholder="Name">
+                    <?php 
+                        include_once "../functions.php";
+                        $File = new filemanager();
+                        $File->setFilenames("usertype");
+                        $List = $File->AllContents();
+                        for ($i=0; $i < count($List)  - 1; $i++) { 
+                            $Array = explode("~",$List[$i]);
+                            $Name = $Array[1];
+                            echo "<option value='$Name'>$Name</option>";
+                        }
+                    ?>
+                </select>
+             <br>
              <br>
               <select name="order_menu" style="opacity: 0.5; border-radius: 25px;">
                  <option value="">order</option>

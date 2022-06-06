@@ -84,7 +84,6 @@
                 <select name="userid_type">
                     <option value="0">Non</option>
                     <?php 
-                    echo "Hello";
                         include_once "../functions.php";
                             $File = new filemanager();
                             $File->setFilenames("usertype");
@@ -106,7 +105,6 @@
                 <?php if($_GET["user"] == "all") echo ("<input type='submit' value='Update' name = 'Update'>");?>
                 <input type="submit" value="Search"  name = "Search">
                 <?php if($_GET["user"] == "all") echo ("<input type='submit' value='Delete' name = 'Delete'>");?>
-                
             </form>
           </div>
     
