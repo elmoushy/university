@@ -2,7 +2,7 @@
 class InID
 {
     protected $ID=0;
-    protected $name;
+    protected $name="";
 
     
     public function getID()

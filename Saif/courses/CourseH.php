@@ -45,14 +45,13 @@
                 <div style="color:white">
                 <h1>Course</h1>
                 </div>
-
               <br/>
              <br/>
               <div class="content">
-                Course Id <input type="number" name="Id" > <br><br/>
-                Course Name <input type="text" name="Name" > <br><br/>
-                Course Hour <input type="number" name="Hour" > <br><br/>
-                Course Hour Price <input type="number" name="Price" > <br><br/>
+                 <input type="number" name="Id" placeholder="Course Id"> <br><br/>
+                <input type="text" name="Name" placeholder="Course Name"> <br><br/>
+                <input type="number" name="Hour" placeholder="Course Hour"> <br><br/>
+                <input type="number" name="Price" placeholder="Course Hour price" > <br><br/>
                 <input type="submit" value="Store" name = "Store">
                 <input type="submit" value="Update" name = "Update">
                 <input type="submit" value="Search"  name = "Search">

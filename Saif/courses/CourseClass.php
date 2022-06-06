@@ -7,6 +7,7 @@ if(include_once("InID.php"))
 }
 else
 {
+    include_once("../InID.php");
     include_once("../functions.php");
     include_once "../Interface.php";
 }
@@ -19,7 +20,7 @@ class Course extends InID implements File
     public function __construct()
     {
         $this->FileObj = new filemanager();
-        $this->FileObj->setFilenames("courses");
+        $this->FileObj->spsetname("../courses/courses");
         $this->FileObj->setSeparator("~");
     }
     public function Store()
@@ -89,30 +90,34 @@ class Course extends InID implements File
                     $i--;
                 }
             }
-            if($this->name!="")
+            else
             {
-                if($this->name!=$Array[1])
+                if($this->name!="")
                 {
-                    array_splice($List,$i,1);
-                    $i--;
+                    if($this->name!=$Array[1])
+                    {
+                        array_splice($List,$i,1);
+                        $i--;
+                    }
+                }
+                if($this->Hour!=0)
+                {
+                    if($this->Hour!=intval($Array[2]))
+                    {
+                        array_splice($List,$i,1);
+                        $i--;
+                    }
+                }
+                if($this->HourPrice!=0)
+                {
+                    if($this->HourPrice!=intval($Array[3]))
+                    {
+                        array_splice($List,$i,1);
+                        $i--;
+                    }
                 }
             }
-            if($this->Hour!=0)
-            {
-                if($this->Hour!=intval($Array[2]))
-                {
-                    array_splice($List,$i,1);
-                    $i--;
-                }
-            }
-            if($this->HourPrice!=0)
-            {
-                if($this->HourPrice!=intval($Array[3]))
-                {
-                    array_splice($List,$i,1);
-                    $i--;
-                }
-            }
+            
         }
         $DisplayedList = [];
         $Header = ["Id","Name","Hour","HourPrice"];
