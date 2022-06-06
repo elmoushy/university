@@ -7,6 +7,11 @@ if(!isset($_SESSION["id"]))
 {
     echo(" <script> location.replace('index.html'); </script>"); 
 }
+if($_GET["Logout"] == "true")
+{
+  session_destroy();
+  echo(" <script> location.replace('index.html'); </script>"); 
+}
 $UTM=-1;
 $FileObj=new filemanager();
 $FileObj->spsetname("user/user");
@@ -98,6 +103,7 @@ for($i=0;$i<count($records);$i++)
           <div class="left-content">
             <p>This is an educational university website for <em>Helwan</em> University.</p>
             /////////////////////////////////////////////////////////////hna
+            <h1><a href='/GitHub/Court-system/Saif/index.php?Logout=true'> Logout </a>
           </div>
         </div>
         <div class="col-lg-4 col-sm-4">
