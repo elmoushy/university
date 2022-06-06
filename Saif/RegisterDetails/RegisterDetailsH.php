@@ -66,4 +66,6 @@
                 <input type="submit" value="Delete" name = "Delete">
               </div>
             </form>
+            <div class="login-form" align="left">
+            <h1 ><a href='/GitHub/Court-system/Saif/index.php?Logout=true'> ==>          Logout </a>
           </div>

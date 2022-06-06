@@ -9,9 +9,9 @@ else
 }
 Class swimmingpool extends add
 {
-    public function TotalCost($Cost)
+    public function TotalCost()
     {
-        return $this->Obj->TotalCost() + $Cost;
+        return $this->Obj->TotalCost() + $this->Cost;
     }
 }
 ?>

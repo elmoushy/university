@@ -1,2 +1,5 @@
-1~bus collage~1000~include_once('../decrator/bus collage.php');~~
-2~swimming pool~1000~include_once('../decrator/swimming pool.php');~
+1~bus~2000~include_once('../decrator/decratorbus.php');~
+2~swimming pool~300~include_once('../decrator/swimming pool.php');~~~
+3~liberary~30~include_once('../decrator/decratorliberary.php');~
+4~Music club~5000~include_once('../decrator/decratorMusic club.php');~
+5~Travel to maldiv~20000~include_once('../decrator/decratorTravel to maldiv.php');~

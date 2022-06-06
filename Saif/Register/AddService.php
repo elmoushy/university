@@ -57,12 +57,13 @@
                             $Id = $Array[0];
                             $Name = $Array[1];
                             echo "$Name <input type='checkbox' name='Deco[]' value='$Id'> <br>";
-                            //echo "<input type='hidden' name='$Name' value='$Id'> <br>";
                         }
                     ?>
                     
             <br>
                 <input type="submit" value="Subscribe" name = "Serves">
             </form>
+            <div class="login-form" align="left">
+            <h1 ><a href='/GitHub/Court-system/Saif/index.php?Logout=true'> ==>          Logout </a>
           </div>
           

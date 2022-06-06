@@ -100,7 +100,7 @@ class dec extends InID implements File
         {
             $s=$this->FileObj->getSeparator();
             $id=$this->FileObj->getId()+1;
-            $record=$id.$s.$this->getName().$s.$this->getPrice().$s."include_once("."'"."../"."decrator"."/".$this->getName().".php"."'".")".";".$s;
+            $record=$id.$s.$this->getName().$s.$this->getPrice().$s."include_once("."'"."../"."decrator"."/"."decrator".$this->getName().".php"."'".")".";".$s;
             $this->FileObj->store_dataFile($record);
             $this->interphp();
             unlink("../Register/AddServiceAction.php");

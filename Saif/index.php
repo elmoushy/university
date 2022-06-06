@@ -103,7 +103,6 @@ for($i=0;$i<count($records);$i++)
           <div class="left-content">
             <p>This is an educational university website for <em>Helwan</em> University.</p>
             /////////////////////////////////////////////////////////////hna
-            <h1><a href='/GitHub/Court-system/Saif/index.php?Logout=true'> Logout </a>
           </div>
         </div>
         <div class="col-lg-4 col-sm-4">
@@ -158,7 +157,7 @@ for($i=0;$i<count($records);$i++)
                 ?>
                 <?php
                 } if($name=="admin"){
-                    echo("<h1><a href='/GitHub/Court-system/Saif/decrator/decorationhtml.php'> decrator </a></h1><br>");
+                    echo("<h1><a href='/GitHub/Court-system/Saif/decrator/dec.php'> decrator </a></h1><br>");
                 ?>
                 <?php
                 } if($name=="admin"){
@@ -168,6 +167,10 @@ for($i=0;$i<count($records);$i++)
                 }
                 ?>
               </div>
+            <br/>
+            <br/>
             </form>
+            <div class="login-form" align="left">
+            <h1 ><a href='/GitHub/Court-system/Saif/index.php?Logout=true'> ==>          Logout </a>
           </div>
 ?>

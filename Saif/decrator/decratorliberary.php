@@ -7,11 +7,11 @@ else
 {
     include_once("../addition.php");
 }
-Class buscollage extends add
+Class liberary extends add
 {
-    public function TotalCost($Cost)
+    public function TotalCost()
     {
-        return $this->Obj->TotalCost() + $Cost;
+        return $this->Obj->TotalCost() + $this->Cost;
     }
 }
 ?>

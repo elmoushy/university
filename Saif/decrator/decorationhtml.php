@@ -7,7 +7,7 @@ if(isset($_POST["Store"]))
     $dec->setName($Name);
     $dec->setPrice($price);
     $dec->Store();
-    echo(" <script> location.replace('decorationhtml.php'); </script>");
+    echo(" <script> location.replace('dec.php'); </script>");
 }
 if(isset($_POST["Update"]))
 {
@@ -16,7 +16,7 @@ if(isset($_POST["Update"]))
     $dec->setName($Name);
     $dec->setPrice($price);
     $dec->Update();
-    echo(" <script> location.replace('decorationhtml.php'); </script>");
+    echo(" <script> location.replace('dec.php'); </script>");
 }
 if(isset($_POST["Search"]))
 {
@@ -26,7 +26,7 @@ if(isset($_POST["Search"]))
     $dec->setPrice($price);
     $List = $dec->Search();
     DisplayTable($List);
-    echo "<br><a href='decorationhtml.php'>Return To Menu</a> ";
+    echo "<br><a href='dec.php'>Return To Menu</a> ";
 }
 if(isset($_POST["Delete"]))
 {
@@ -35,6 +35,6 @@ if(isset($_POST["Delete"]))
     $dec->setName($Name);
     $dec->setPrice($price);
     $dec->Remove();
-    echo(" <script> location.replace('decorationhtml.php'); </script>");
+    echo(" <script> location.replace('dec.php'); </script>");
 }
 ?>

@@ -7,7 +7,7 @@ else
 {
     include_once("../addition.php");
 }
-Class ~gym~ extends add
+Class Musicclub extends add
 {
     public function TotalCost()
     {

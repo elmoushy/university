@@ -1,6 +1,9 @@
 <?php
-include_once('../decrator/bus collage.php');
+include_once('../decrator/decratorbus.php');
 include_once('../decrator/swimming pool.php');
+include_once('../decrator/decratorliberary.php');
+include_once('../decrator/decratorMusic club.php');
+include_once('../decrator/decratorTravel to maldiv.php');
 
 
 include_once("../decrator/basic expenses.php");

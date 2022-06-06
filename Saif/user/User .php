@@ -106,6 +106,8 @@
                 <input type="submit" value="Search"  name = "Search">
                 <?php if($_GET["user"] == "all") echo ("<input type='submit' value='Delete' name = 'Delete'>");?>
             </form>
+            <div class="login-form" align="left">
+            <h1 ><a href='/GitHub/Court-system/Saif/index.php?Logout=true'> ==>          Logout </a>
           </div>
     
 
