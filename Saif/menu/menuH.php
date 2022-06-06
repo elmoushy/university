@@ -111,9 +111,10 @@
              <br/>
              <br/>
              <br/>
-             <input type="submit" value="Store" name = "Store">
-             <input type="submit" value="Update" name = "Update">
+             <input type="hidden" name="usermenu" value="<?php echo $_GET["usermenu"]?>">
+             <?php if($_GET["usermenu"] == "add" || $_GET["usermenu"] == "all") echo "<input type='submit' value='Store' name = 'Store'>"?>
+             <?php if($_GET["usermenu"] == "all") echo "<input type='submit' value='Update' name = 'Update'>"?>
              <input type="submit" value="Search"  name = "Search">
-             <input type="submit" value="Delete" name = "Delete">
+             <?php if($_GET["usermenu"] == "all") echo "<input type='submit' value='Delete' name = 'Delete'>"?>
             </form>
           </div>

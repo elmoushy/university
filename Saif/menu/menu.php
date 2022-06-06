@@ -14,7 +14,7 @@ if(isset($_POST["Store"]))
     $obj->setDecorator($decorator);
     $obj->setstratge($stratge);
     $obj->Store();
-    echo(" <script> location.replace('menu.html'); </script>");
+    echo(" <script> location.replace('menuH.php?usermenu=".$_POST["usermenu"]."'); </script>");
 }
 if(isset($_POST["Update"]))
 {
@@ -30,7 +30,7 @@ if(isset($_POST["Update"]))
     $obj->setDecorator($decorator);
     $obj->setstratge($stratge);
     $obj->Update();
-    echo(" <script> location.replace('menu.html'); </script>");
+    echo(" <script> location.replace('menuH.php?usermenu=".$_POST["usermenu"]."'); </script>");
 }
 if(isset($_POST["Search"]))
 {
@@ -47,7 +47,7 @@ if(isset($_POST["Search"]))
     $obj->setstratge($stratge);
     $obj = $obj->Search();
     DisplayTable($obj);
-    echo "<br><a href='menu.html'>Return To Menu</a> ";
+    echo "<br><a href='menuH.php?usermenu=".$_POST["usermenu"]."'>Return To Menu</a> ";
 }
 if(isset($_POST["Delete"]))
 {
@@ -63,6 +63,6 @@ if(isset($_POST["Delete"]))
     $obj->setDecorator($decorator);
     $obj->setstratge($stratge);
     $obj->Remove();
-    echo(" <script> location.replace('menu.html'); </script>");
+    echo(" <script> location.replace('menuH.php?usermenu=".$_POST["usermenu"]."'); </script>");
 }
 ?>

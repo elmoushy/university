@@ -5,7 +5,7 @@ if(isset($_POST["Store"]))
     $obj = new Usertype();
     $obj->setName($_POST["Name"]);
     $obj->Store();
-    echo(" <script> location.replace('Usertype.html'); </script>");
+    echo(" <script> location.replace('UsertypeH.php?usertype=".$_POST["usertype"]."'); </script>");
 }
 if(isset($_POST["Update"]))
 {
@@ -13,7 +13,7 @@ if(isset($_POST["Update"]))
     $obj->setID($_POST["Id"]);
     $obj->setName($_POST["Name"]);
     $obj->Update();
-    echo(" <script> location.replace('Usertype.html'); </script>");
+    echo(" <script> location.replace('UsertypeH.php?usertype=".$_POST["usertype"]."'); </script>");
 }
 if(isset($_POST["Search"]))
 {
@@ -22,7 +22,7 @@ if(isset($_POST["Search"]))
     $obj->setName($_POST["Name"]);
     $List = $obj->Search();
     DisplayTable($List);
-    echo "<br><a href='Usertype.html'>Return To Menu</a> ";
+    echo "<br><a href='UsertypeH.php?usertype=".$_POST["usertype"]."'>Return To Menu</a> ";
 }
 if(isset($_POST["Delete"]))
 {
@@ -30,5 +30,5 @@ if(isset($_POST["Delete"]))
     $obj->setID($_POST["Id"]);
     $obj->setName($_POST["Name"]);
     $obj->Remove();
-    echo(" <script> location.replace('Usertype.html'); </script>");
+    echo(" <script> location.replace('UsertypeH.php?usertype=".$_POST["usertype"]."'); </script>");
 }

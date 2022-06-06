@@ -49,6 +49,7 @@
               <br/>
              <br/>
               <div class="content">
+              <input type="hidden" name="usertype" value="<?php echo $_GET["usertype"]?>"> <br>
                 <div class="input-field">
                   <input type="number" name="Id" placeholder="  Id "  style="opacity: 0.5; border-radius: 13px; height: 40px; width:400px">
                 </div>
@@ -58,10 +59,11 @@
                 </div>
                 <br/>
               </div>
-              <<input type="submit" value="Store" name = "Store">
-              <input type="submit" value="Update" name = "Update">
+
+              <?php if($_GET["usertype"] == "add" || $_GET["usertype"] == "all") echo "<input type='submit' value='Store' name = 'Store'>"?>
+              <?php if($_GET["usertype"] == "all") echo "<input type='submit' value='Update' name = 'Update'>"?>
               <input type="submit" value="Search"  name = "Search">
-              <input type="submit" value="Delete" name = "Delete">
+              <?php if($_GET["usertype"] == "all") echo "<input type='submit' value='Delete' name = 'Delete'>"?>
               </div>
             </form>
           </div>

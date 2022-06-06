@@ -131,17 +131,21 @@ for($i=0;$i<count($records);$i++)
                   echo("<h1><a href='/GitHub/Court-system/Saif/courses/CourseH.php?product=".$product."'> Course </a></h1><br><br>");
                 ?>
                 <?php
-                } if($user!="null"){?>
-                    <h1><a href="/GitHub/Court-system/Saif/user/User .php"> User </a></h1><br><br>
+                } if($user!="null"){
+                   echo("<h1><a href='/GitHub/Court-system/Saif/user/User .php?user=".$user."'> User </a></h1><br><br>");
+                ?>
                 <?php
-                } if($usertype!="null"){?>
-                    <h1><a href="/GitHub/Court-system/Saif/usertype/Usertype.html"> UserType </a></h1><br><br>
+                } if($usertype!="null"){
+                    echo("<h1><a href='/GitHub/Court-system/Saif/usertype/UsertypeH.php?usertype=".$usertype."'> UserType </a></h1><br><br>");
+                ?>
                 <?php
-                } if($usertypemenu!="null"){?>
-                   <h1> <a href="/GitHub/Court-system/Saif/usertypemenu/UserTypeMenu.php"> usertypemenu </a></h1><br><br>
+                } if($usertypemenu!="null"){
+                  echo("<h1> <a href='/GitHub/Court-system/Saif/usertypemenu/UserTypeMenu.php?usertypemenu=".$usertypemenu."'> usertypemenu </a></h1><br><br>");
+                ?>
                 <?php
-                } if($usermenu!="null"){?>
-                    <h1><a href="/GitHub/Court-system/Saif/menu/menu.html"> menu </a></h1><br>
+                } if($usermenu!="null"){
+                    echo("<h1><a href='/GitHub/Court-system/Saif/menu/menuH.php?usermenu=".$usermenu."'> menu </a></h1><br>");
+                ?>
                 <?php
                 }
                 ?>

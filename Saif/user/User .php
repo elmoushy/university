@@ -41,6 +41,7 @@
 
               <br/>
              <br/>
+                <input type="hidden" name="user" value="<?php echo $_GET["user"]?>">
                 <input type="number" name="ID" placeholder="Student Id"> <br>
                 <br/>
                 <div  >
@@ -101,10 +102,11 @@
                 </select>
                 <br>
                 <br>
-                <input type="submit" value="Store" name = "Store">
-                <input type="submit" value="Update" name = "Update">
+                <?php if($_GET["user"] == "add" || $_GET["user"] == "all") echo ("<input type='submit' value='Store' name = 'Store'>");?>
+                <?php if($_GET["user"] == "all") echo ("<input type='submit' value='Update' name = 'Update'>");?>
                 <input type="submit" value="Search"  name = "Search">
-                <input type="submit" value="Delete" name = "Delete">
+                <?php if($_GET["user"] == "all") echo ("<input type='submit' value='Delete' name = 'Delete'>");?>
+                
             </form>
           </div>
     

@@ -7,7 +7,7 @@ if(isset($_POST["Add"]))
     if($_POST["MenuId"] == 0) die("Menu Name is required");
     $UserTypeMenu = new UserTypeMenu(0,intval($_POST["TypeId"]),intval($_POST["MenuId"]));
     $UserTypeMenu->Store();
-        echo(" <script> location.replace('UserTypeMenu.php'); </script>");
+        echo(" <script> location.replace('UserTypeMenu.php?usertypemenu=".$_POST["usertypemenu"]."'); </script>");
 
 }
 if(isset($_POST["Update"]))
@@ -15,7 +15,7 @@ if(isset($_POST["Update"]))
     if($_POST["Id"] == 0) die("Id is required");
     $UserTypeMenu = new UserTypeMenu(intval($_POST["Id"]),intval($_POST["TypeId"]),intval($_POST["MenuId"]));
     $UserTypeMenu->Update();
-    echo(" <script> location.replace('UserTypeMenu.php'); </script>");
+    echo(" <script> location.replace('UserTypeMenu.php?usertypemenu=".$_POST["usertypemenu"]."'); </script>");
 
 }
 if(isset($_POST["Delete"]))
@@ -23,7 +23,7 @@ if(isset($_POST["Delete"]))
     if($_POST["Id"] == 0) die("Id is required");
     $UserTypeMenu = new UserTypeMenu(intval($_POST["Id"]),intval($_POST["TypeId"]),intval($_POST["MenuId"]));
     $UserTypeMenu->Remove();
-    echo(" <script> location.replace('UserTypeMenu.php'); </script>");
+    echo(" <script> location.replace('UserTypeMenu.php?usertypemenu=".$_POST["usertypemenu"]."'); </script>");
 
 }
 if(isset($_POST["Search"]))

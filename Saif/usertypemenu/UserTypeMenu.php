@@ -77,10 +77,11 @@
                         ?>
                     </select>
                     <br>
-                    <input type="submit" value="Add" name="Add">
-                    <input type="submit" value="Update" name="Update">
-                    <input type="submit" value="Search" name="Search">
-                    <input type="submit" value="Delete" name="Delete">
+                    <input type="hidden" name="usertypemenu" value="<?php echo $_GET["usertypemenu"]?>">
+                    <?php if($_GET["usertypemenu"] == "add" || $_GET["usertypemenu"] == "all") echo "<input type='submit' value='Add' name = 'Add'>"?>
+                    <?php if($_GET["usertypemenu"] == "all") echo "<input type='submit' value='Update' name = 'Update'>"?>
+                    <input type="submit" value="Search"  name = "Search">
+                    <?php if($_GET["usertypemenu"] == "all") echo "<input type='submit' value='Delete' name = 'Delete'>"?>
                 </form>
           </div>
     

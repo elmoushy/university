@@ -21,7 +21,7 @@ if(isset($_POST["Store"]))
 
     $sub->notifyAllObserv($mes);
 
-    echo(" <script> location.replace('User .php'); </script>");
+    echo(" <script> location.replace('User .php?user=".$_POST["user"]."'); </script>");
 }
 if(isset($_POST["Update"]))
 {
@@ -33,7 +33,7 @@ if(isset($_POST["Update"]))
     $obj->setfaculity_id($faculity);
     $obj->setUserid_type($userid_type);
     $obj->Update();
-    echo(" <script> location.replace('User .php'); </script>");
+    echo(" <script> location.replace('User .php?user=".$_POST["user"]."'); </script>");
 }
 if(isset($_POST["Search"]))
 {
@@ -46,7 +46,7 @@ if(isset($_POST["Search"]))
     $obj->setUserid_type($userid_type);
     $obj = $obj->Search();
     DisplayTable($obj);
-    echo "<br><a href='User.html'>Return To Menu</a> ";
+    echo "<br><a href='User .php?user=".$_POST["user"]."'>Return To Menu</a> ";
 }
 if(isset($_POST["Delete"]))
 {
@@ -59,6 +59,6 @@ if(isset($_POST["Delete"]))
     $obj->setfaculity_id($faculity);
     $obj->setUserid_type($userid_type);
     $obj->Remove();
-    echo(" <script> location.replace('User .php'); </script>");
+    echo(" <script> location.replace('User .php?user=".$_POST["user"]."'); </script>");
 }
 ?>
