@@ -20,7 +20,7 @@ class Course extends InID implements File
     public function __construct()
     {
         $this->FileObj = new filemanager();
-        $this->FileObj->spsetname("../courses/courses");
+        $this->FileObj->setFilenames("courses");
         $this->FileObj->setSeparator("~");
     }
     public function Store()
