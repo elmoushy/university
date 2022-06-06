@@ -4,3 +4,13 @@
 4~1~bus~2000
 5~1~swimmingpool~300
 6~1~Traveltomaldiv~20000
+7~1~Musicclub~5000
+8~1~Musicclub~5000
+9~<br />
+<b>Warning</b>:  Undefined array key ~bus~2000
+1~<br />
+<b>Warning</b>:  Undefined array key ~swimmingpool~300
+1~1~Musicclub~5000
+2~1~Musicclub~5000
+3~1~Musicclub~5000
+4~1~Musicclub~5000
