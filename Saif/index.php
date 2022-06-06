@@ -2,6 +2,7 @@
 error_reporting (E_ERROR | E_PARSE);
 session_start();
 include_once("functions.php");
+//session_destroy();
 if(!isset($_SESSION["id"]))
 {
     echo(" <script> location.replace('index.html'); </script>"); 
@@ -162,3 +163,4 @@ for($i=0;$i<count($records);$i++)
               </div>
             </form>
           </div>
+?>
