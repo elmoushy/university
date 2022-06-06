@@ -25,10 +25,14 @@ class Course extends InID implements File
     }
     public function Store()
     {
-        $this->ID = $this->FileObj->getId() + 1;
-        $s = $this->FileObj->getSeparator();
-        $record = $this->ID.$s.$this->name.$s.$this->Hour.$s.$this->HourPrice.$s;
-        $this->FileObj->store_dataFile($record);
+        if($this->getName()!=""&&$this->getHour()>=0 && $this->getHourPrice()>=0)
+        {
+            $this->ID = $this->FileObj->getId() + 1;
+            $s = $this->FileObj->getSeparator();
+            $record = $this->ID.$s.$this->name.$s.$this->Hour.$s.$this->HourPrice.$s;
+            $this->FileObj->store_dataFile($record);
+        }
+        
     }
     public function Update()
     {
@@ -43,11 +47,11 @@ class Course extends InID implements File
                     {
                         $ar[1]=$this->getName();
                     }
-                    if($this->Hour!=0)
+                    if($this->Hour>=0)
                     {
                         $ar[2]=$this->getHour();
                     }
-                    if($this->HourPrice!=0)
+                    if($this->HourPrice>=0)
                     {
                         $ar[3]=$this->getHourPrice();
                     }
