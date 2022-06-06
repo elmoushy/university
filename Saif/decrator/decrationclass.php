@@ -28,7 +28,6 @@ class dec extends InID implements File
         $this->F->spsetname("../dacoratelogarizm");
         $this->F->setSeparator("~");
     }
-
     public function interphp()
     {
         $records = $this->File->AllContents();

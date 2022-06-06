@@ -57,10 +57,13 @@ class menu extends user implements File
     }
     public function Store()
     {
-        $s=$this->FileObj->getSeparator();
-        $id=$this->FileObj->getId($s)+1;
-        $record=$id.$s.$this->getName().$s.$this->getOrder_m().$s.$this->getProduct_m().$s.$this->getUser_m().$s.$this->getUser_type().$s.$this->getUser_type_menu().$s.$this->getUser_menu().$s.$this->getDecorator().$s.$this->getStratge().$s;
-        $this->FileObj->store_dataFile($record);
+        if($this->getName()!=""&&$this->getOrder_m()!=""&&$this->getProduct_m()!=""&&$this->getUser_m()!=""&&$this->getuser_type()!=""&&$this->getuser_type_menu()!=""&&$this->getUser_menu()!=""&&$this->getDecorator()!=""&&$this->getStratge()!="")
+        {
+            $s=$this->FileObj->getSeparator();
+            $id=$this->FileObj->getId($s)+1;
+            $record=$id.$s.$this->getName().$s.$this->getOrder_m().$s.$this->getProduct_m().$s.$this->getUser_m().$s.$this->getUser_type().$s.$this->getUser_type_menu().$s.$this->getUser_menu().$s.$this->getDecorator().$s.$this->getStratge().$s;
+            $this->FileObj->store_dataFile($record);
+        }
     }
     public function Update()
     {
@@ -86,15 +89,15 @@ class menu extends user implements File
                 }
                 if($this->user_m!="")
                 {
-                    $ar[4]=$this->getUser_type();
+                    $ar[4]=$this->getuser_m();
                 }
                 if($this->user_type!="")
                 {
-                    $ar[5]=$this->getUser_type_menu();
+                    $ar[5]=$this->getuser_type();
                 }
                 if($this->user_type_menu!="")
                 {
-                    $ar[6]=$this->getUser_type();
+                    $ar[6]=$this->getuser_type_menu();
                 }
                 if($this->user_menu!="")
                 {
