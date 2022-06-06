@@ -1,2 +1,6 @@
 1~1~dessertcaramel~1000
 2~1~toktok~1000
+3~1~bus~2000
+4~1~bus~2000
+5~1~swimmingpool~300
+6~1~Traveltomaldiv~20000

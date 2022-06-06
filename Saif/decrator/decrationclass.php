@@ -135,7 +135,7 @@ class dec extends InID implements File
                             unlink('decrator'.$ar[1].'.php');
                             unlink("../Register/AddServiceAction.php");
                             $ar[1]=$this->getName();
-                            $ar[3]="include_once("."'"."../"."decrator"."/".$this->getName().".php"."'".")".";".$s;
+                            $ar[3]="include_once("."'"."../"."decrator"."/"."decrator".$this->getName().".php"."'".")".";".$s;
                             $this->interphp();
                         }
                         if($this->price!=-1)
