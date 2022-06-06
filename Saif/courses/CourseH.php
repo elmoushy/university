@@ -48,14 +48,15 @@
               <br/>
              <br/>
               <div class="content">
+                <input type="hidden" name="product" value="<?php echo $_GET["product"]?>"> <br>
                  <input type="number" name="Id" placeholder="Course Id"> <br><br/>
                 <input type="text" name="Name" placeholder="Course Name"> <br><br/>
                 <input type="number" name="Hour" placeholder="Course Hour"> <br><br/>
                 <input type="number" name="Price" placeholder="Course Hour price" > <br><br/>
-                <input type="submit" value="Store" name = "Store">
-                <input type="submit" value="Update" name = "Update">
+                <?php if($_GET["product"] == "add" || $_GET["product"] == "all") echo "<input type='submit' value='Store' name = 'Store'>"?>
+                <?php if($_GET["product"] == "all") echo "<input type='submit' value='Update' name = 'Update'>"?>
                 <input type="submit" value="Search"  name = "Search">
-                <input type="submit" value="Delete" name = "Delete">
+                <?php if($_GET["product"] == "all") echo "<input type='submit' value='Delete' name = 'Delete'>"?>
               </div>
             </form>
           </div>

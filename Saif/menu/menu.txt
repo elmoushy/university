@@ -1,3 +1,3 @@
 1~Student~add~all~null~add~search~all~add~all~
 2~Secretary~search~all~add~null~null~search~search~all~
-3~adminAll~all~all~all~all~all~all~all~all~
+3~admin~all~all~all~all~all~all~all~all~

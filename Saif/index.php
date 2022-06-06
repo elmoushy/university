@@ -43,11 +43,13 @@ $user;
 $usertype;
 $usertypemenu;
 $usermenu;
+$name;
 for($i=0;$i<count($records);$i++)
 {
     $ar = explode("~",$records[$i]);
     if($ar[0] == $UTM)
     {
+        $name = $ar[1];
         $order =$ar[2];
         $product =$ar[3];
         $user =$ar[4];
@@ -145,6 +147,14 @@ for($i=0;$i<count($records);$i++)
                 <?php
                 } if($usermenu!="null"){
                     echo("<h1><a href='/GitHub/Court-system/Saif/menu/menuH.php?usermenu=".$usermenu."'> menu </a></h1><br>");
+                ?>
+                <?php
+                } if($name=="admin"){
+                    echo("<h1><a href='/GitHub/Court-system/Saif/decrator/decorationhtml.php'> decrator </a></h1><br>");
+                ?>
+                <?php
+                } if($name=="admin"){
+                    echo("<h1><a href='/GitHub/Court-system/Saif/stratge/stratge.html'> stratge </a></h1><br>");
                 ?>
                 <?php
                 }

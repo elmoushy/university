@@ -7,7 +7,7 @@ if(isset($_POST["Store"]))
     $Course->setHour($_POST["Hour"]);
     $Course->setHourPrice($_POST["Price"]);
     $Course->Store();
-    echo(" <script> location.replace('CourseH.php'); </script>");
+    echo(" <script> location.replace('CourseH.php?product=".$_POST["product"]."'); </script>");
 }
 if(isset($_POST["Update"]))
 {
@@ -17,7 +17,7 @@ if(isset($_POST["Update"]))
     $Course->setHour($_POST["Hour"]);
     $Course->setHourPrice($_POST["Price"]);
     $Course->Update();
-    echo(" <script> location.replace('CourseH.php'); </script>");
+    echo(" <script> location.replace('CourseH.php?product=".$_POST["product"]."'); </script>");
 }
 if(isset($_POST["Search"]))
 {
@@ -28,7 +28,7 @@ if(isset($_POST["Search"]))
     $Course->setHourPrice($_POST["Price"]);
     $List = $Course->Search();
     DisplayTable($List);
-    echo "<br><a href='CourseH.php'>Return To Menu</a> ";
+    echo "<br><a href='CourseH.php?product=".$_POST["product"]."'>Return To Menu</a> ";
 }
 if(isset($_POST["Delete"]))
 {
@@ -38,5 +38,5 @@ if(isset($_POST["Delete"]))
     $Course->setHour($_POST["Hour"]);
     $Course->setHourPrice($_POST["Price"]);
     $Course->Remove();
-    echo(" <script> location.replace('CourseH.php'); </script>");
+    echo(" <script> location.replace('CourseH.php?product=".$_POST["product"]."'); </script>");
 }
