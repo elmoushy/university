@@ -166,7 +166,7 @@ class dec extends InID implements File
             $ar=explode($this->FileObj->getSeparator(),$records[$i]);
             if($this->ID == $ar[0])
             {
-                $pos=$ar[1];
+               $pos=$ar[1];
                $this->FileObj->remove_dataFile($records[$i]."\r\n");
                break;
             }

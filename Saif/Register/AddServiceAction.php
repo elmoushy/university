@@ -1,5 +1,6 @@
 <?php
 include_once('../decrator/bus collage.php');
+include_once('../decrator/swimming pool.php');
 
 
 include_once("../decrator/basic expenses.php");

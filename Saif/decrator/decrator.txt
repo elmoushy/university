@@ -1,1 +1,2 @@
 1~bus collage~1000~include_once('../decrator/bus collage.php');~~
+2~swimming pool~1000~include_once('../decrator/swimming pool.php');~

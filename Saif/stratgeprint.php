@@ -1,6 +1,7 @@
 <?php
-include_once('stratge/Fawery.php');
-include_once('stratge/Paybal.php');
+include_once('stratge/mal.php');
+include_once('stratge/Paypal.php');
+include_once('stratge/Cash.php');
 
 error_reporting (E_ERROR | E_PARSE);
 include_once("stratge/stratgeclass.php");
