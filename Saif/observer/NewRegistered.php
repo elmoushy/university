@@ -7,6 +7,7 @@ else
 {
     include_once "../Interface.php";
 }
+error_reporting (E_ERROR | E_PARSE);
 class NewRegister extends observer
 {
     function __construct($subject)

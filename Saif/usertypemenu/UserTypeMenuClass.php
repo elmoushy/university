@@ -4,6 +4,7 @@ include_once "../functions.php";
 include_once "../usertype/usertypeclass.php";
 include_once "../menu/menuclass.php";
 include_once "../Interface.php";
+error_reporting (E_ERROR | E_PARSE);
 class UserTypeMenu extends InID implements File
 {
     private int $TypeId;

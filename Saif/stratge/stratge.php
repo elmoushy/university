@@ -1,4 +1,5 @@
 <?php
+error_reporting (E_ERROR | E_PARSE);
 include_once "stratgeclass.php";
 extract($_POST);
 if(isset($_POST["Store"]))

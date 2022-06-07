@@ -1,4 +1,5 @@
 <?php
+error_reporting (E_ERROR | E_PARSE);
 include_once "CourseClass.php";
 if(isset($_POST["Store"]))
 {

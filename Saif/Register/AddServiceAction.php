@@ -80,7 +80,8 @@ if(isset($_POST["Serves"]))
     $ref = $reg->getOneRegister($_POST["rgID"]);
     $ref->setTotalPriceHr($ref->getTotalPriceHr() + $way->TotalCost());
     $ref->Update();
-    echo(" <script> location.replace('../Register/RegisterH.php?product=".$_POST["product"]."'); </script>");
+    //echo(" <script> location.replace('../Register/RegisterH.php?product=".$_POST["product"]."'); </script>");
+    echo "done";
 
 }
 

@@ -2,7 +2,7 @@
 
 include_once("../InID.php");
 include_once("../functions.php");
-
+error_reporting (E_ERROR | E_PARSE);
 class Usertype extends InID
 {
     private $FileObj;

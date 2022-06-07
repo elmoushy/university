@@ -1,6 +1,7 @@
 <?php
-include_once('stratge/mal.php');
-include_once('stratge/Paypal.php');
+include_once('stratge/Fawery.php');
+include_once('stratge/Vodafone .php');
+include_once('stratge/vodafone cash.php');
 include_once('stratge/Cash.php');
 
 error_reporting (E_ERROR | E_PARSE);
@@ -44,6 +45,6 @@ if(isset($_POST['submit']))
     $sub = new Subject();
     new NewRegister($sub);
     $sub->notifyAllObserv("");
-    echo(" <script> location.replace('Register/Register.html'); </script>");
+    echo "Done";
 }
 ?>

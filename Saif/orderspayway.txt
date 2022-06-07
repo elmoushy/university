@@ -4,3 +4,5 @@
 0~3~Fawry~
 0~3~Fawry~
 0~1~Fawery~
+0~2~vodafonecash~
+0~2~Cash~

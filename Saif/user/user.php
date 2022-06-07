@@ -1,6 +1,7 @@
 <?php
 include_once("userclass.php");
 include_once("../Interface.php");
+error_reporting (E_ERROR | E_PARSE);
 extract($_POST);
 if(isset($_POST["Store"]))
 {

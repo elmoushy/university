@@ -1,0 +1,4 @@
+1~Fawery~include_once('stratge/Fawery.php');~
+2~Vodafone ~include_once('stratge/Vodafone .php');~
+3~vodafone cash~include_once('stratge/vodafone cash.php');~
+4~Cash~include_once('stratge/Cash.php');~

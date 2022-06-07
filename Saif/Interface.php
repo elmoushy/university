@@ -2,7 +2,7 @@
 include_once("functions.php");
 include_once("observer/NewUserN.php");
 include_once("observer/NewRegistered.php");
-
+error_reporting (E_ERROR | E_PARSE);
 interface File{
     public function Store();
     public function Update();

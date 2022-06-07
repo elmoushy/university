@@ -1,4 +1,5 @@
 <?php
+error_reporting (E_ERROR | E_PARSE);
 include_once "UserTypeMenuClass.php";
 include_once "../functions.php";
 if(isset($_POST["Add"]))
