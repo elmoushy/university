@@ -44,8 +44,7 @@ echo "Total Hour Price: ".$Res->getTotalPriceHr()."</br>";
                             echo "<option value='$Id'>$Name</option>";
                         }
                     ?>
-                    <input type="submit" value="submit" name = "submit">
-                    
+                    <input type="submit" value="submit" name = "submit">          
 </select>
 </form>
 </body>

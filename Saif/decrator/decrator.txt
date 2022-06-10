@@ -3,3 +3,6 @@
 3~liberary~30~include_once('../decrator/decratorliberary.php');~
 4~Music club~5000~include_once('../decrator/decratorMusic club.php');~
 5~Travel to maldiv~20000~include_once('../decrator/decratorTravel to maldiv.php');~
+6~taxi~1000~include_once('../decrator/decratortaxi.php');~
+7~Netflix  move~0~include_once('../decrator/decratorNetflix  move.php');~
+8~internet fast speed~4000~include_once('../decrator/decratorinternet fast speed.php');~

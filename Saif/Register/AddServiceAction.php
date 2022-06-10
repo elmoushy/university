@@ -1,9 +1,12 @@
 <?php
 include_once('../decrator/decratorbus.php');
-include_once('../decrator/decratorswimming pool.php');
+include_once('../decrator/swimming pool.php');
 include_once('../decrator/decratorliberary.php');
 include_once('../decrator/decratorMusic club.php');
 include_once('../decrator/decratorTravel to maldiv.php');
+include_once('../decrator/decratortaxi.php');
+include_once('../decrator/decratorNetflix  move.php');
+include_once('../decrator/decratorinternet fast speed.php');
 
 
 include_once("../decrator/basic expenses.php");
@@ -80,8 +83,6 @@ if(isset($_POST["Serves"]))
     $ref = $reg->getOneRegister($_POST["rgID"]);
     $ref->setTotalPriceHr($ref->getTotalPriceHr() + $way->TotalCost());
     $ref->Update();
-    //echo(" <script> location.replace('../Register/RegisterH.php?product=".$_POST["product"]."'); </script>");
-    echo "done";
 
 }
 
